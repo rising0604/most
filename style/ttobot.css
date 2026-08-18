@@ -1,0 +1,300 @@
+/* TTobot roleplay log — shared styles */
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+:root {
+  --bg-page: #f4f1ec;
+  --bg-card: #fffefb;
+  --bg-card-alt: #f8f6f2;
+  --border: #e2ddd4;
+  --text: #2c2825;
+  --text-muted: #7a736a;
+  --shadow: 0 1px 3px rgba(44, 40, 37, 0.06);
+  --radius: 10px;
+  --font-sans: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --max-width: 52rem;
+
+  /* per-character accents */
+  --accent-c-yh: #3d6b8a;
+  --accent-c-yh-bg: #e8f0f6;
+  --accent-p-ryang: #8b4a52;
+  --accent-p-ryang-bg: #f5e8ea;
+  --accent-autobot: #5c5a7a;
+  --accent-autobot-bg: #ecebf2;
+  --accent-autorobo: #4a6b5c;
+  --accent-autorobo-bg: #e6efe9;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 1.5rem 1rem 3rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg-page);
+  background-image: radial-gradient(circle at 20% 0%, #ebe6de 0%, transparent 50%),
+    radial-gradient(circle at 80% 100%, #e8e3db 0%, transparent 45%);
+  min-height: 100vh;
+}
+
+.ttobot-log {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* —— message card —— */
+.ttobot-status {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  gap: 0.5rem 0.85rem;
+  padding: 1rem 1.1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--border);
+}
+
+.ttobot-status:nth-child(even) {
+  background: var(--bg-card-alt);
+}
+
+.ttobot-status[data-account="@C_YH"] {
+  border-left-color: var(--accent-c-yh);
+}
+
+.ttobot-status[data-account="@P_ryang"] {
+  border-left-color: var(--accent-p-ryang);
+}
+
+.ttobot-status[data-account="@autobot"] {
+  border-left-color: var(--accent-autobot);
+}
+
+.ttobot-status[data-account="@autorobo"] {
+  border-left-color: var(--accent-autorobo);
+}
+
+/* avatar column */
+.ttobot-avatar-wrapper {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: 3.5rem;
+}
+
+.ttobot-avatar {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid var(--border);
+  background: var(--bg-card-alt);
+}
+
+.ttobot-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ttobot-name {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.25;
+  max-width: 4.5rem;
+  word-break: keep-all;
+  color: var(--text-muted);
+}
+
+.ttobot-status[data-account="@C_YH"] .ttobot-name {
+  color: var(--accent-c-yh);
+}
+
+.ttobot-status[data-account="@P_ryang"] .ttobot-name {
+  color: var(--accent-p-ryang);
+}
+
+.ttobot-status[data-account="@autobot"] .ttobot-name {
+  color: var(--accent-autobot);
+}
+
+.ttobot-status[data-account="@autorobo"] .ttobot-name {
+  color: var(--accent-autorobo);
+}
+
+/* content */
+.ttobot-content {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.ttobot-content-text {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.75;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+/* timestamp */
+.ttobot-time {
+  grid-column: 2;
+  grid-row: 2;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.01em;
+  padding-top: 0.15rem;
+  border-top: 1px dashed var(--border);
+  margin-top: 0.15rem;
+}
+
+@media (min-width: 640px) {
+  body {
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .ttobot-status {
+    padding: 1.15rem 1.25rem;
+    gap: 0.6rem 1rem;
+  }
+
+  .ttobot-avatar {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .ttobot-content-text {
+    font-size: 1rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-page: #1a1917;
+    --bg-card: #242220;
+    --bg-card-alt: #2a2826;
+    --border: #3d3a36;
+    --text: #ebe8e4;
+    --text-muted: #9a948a;
+    --shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+    --accent-c-yh: #7eb3d4;
+    --accent-c-yh-bg: #1e2a33;
+    --accent-p-ryang: #d48994;
+    --accent-p-ryang-bg: #332428;
+    --accent-autobot: #a9a6c8;
+    --accent-autobot-bg: #252430;
+    --accent-autorobo: #8fb89e;
+    --accent-autorobo-bg: #1f2a24;
+  }
+
+  body {
+    background-image: radial-gradient(circle at 20% 0%, #252320 0%, transparent 50%),
+      radial-gradient(circle at 80% 100%, #22201e 0%, transparent 45%);
+  }
+}
+
+/* —— index (목차) —— */
+body.index-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.index-wrap {
+  width: 100%;
+  max-width: var(--max-width);
+}
+
+.index-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.index-header h1 {
+  margin: 0 0 0.4rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.index-header p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.index-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.index-section h2 {
+  margin: 0 0 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.index-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.index-list a {
+  display: block;
+  padding: 0.75rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.index-list a:hover {
+  border-color: var(--accent-c-yh);
+  transform: translateX(2px);
+}
+
+.index-section:nth-child(2) .index-list a:hover {
+  border-color: var(--accent-p-ryang);
+}
+
+.index-section:nth-child(3) .index-list a:hover {
+  border-color: var(--accent-autobot);
+}
