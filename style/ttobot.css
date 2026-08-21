@@ -3,10 +3,10 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
 :root {
-  --bg-page: #f4f1ec;
+  --bg-page: #fff8aa;
   --bg-card: #fffefb;
-  --bg-card-alt: #f8f6f2;
-  --border: #e2ddd4;
+  --bg-card-alt: #fffde9;
+  --border: #f9f4b5;
   --text: #2c2825;
   --text-muted: #7a736a;
   --shadow: 0 1px 3px rgba(44, 40, 37, 0.06);
@@ -15,7 +15,7 @@
   --max-width: 52rem;
 
   /* per-character accents */
-  --accent-c-yh: #3d6b8a;
+  --accent-c-yh: #720000;
   --accent-c-yh-bg: #e8f0f6;
   --accent-p-ryang: #8b4a52;
   --accent-p-ryang-bg: #f5e8ea;
@@ -44,8 +44,8 @@ body {
   line-height: 1.65;
   color: var(--text);
   background: var(--bg-page);
-  background-image: radial-gradient(circle at 20% 0%, #ebe6de 0%, transparent 50%),
-    radial-gradient(circle at 80% 100%, #e8e3db 0%, transparent 45%);
+  background-image: radial-gradient(circle at 20% 0%, #fffffc 0%, transparent 50%),
+    radial-gradient(circle at 80% 100%, #fffde2 0%, transparent 45%);
   min-height: 100vh;
 }
 
