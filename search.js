@@ -22,6 +22,11 @@
     String(text).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
   function getLogLinks() {
+    // 리더에는 .index-list 가 없으므로 manifest 를 먼저 봅니다.
+    const manifest = window.MOST_MANIFEST;
+    if (manifest?.logs?.length) {
+      return manifest.logs.map(log => ({ href: log.file, title: log.label }));
+    }
     return [...document.querySelectorAll(".index-list a[href]")]
       .map(a => ({ href: a.getAttribute("href"), title: a.textContent.trim() }));
   }
@@ -68,27 +73,31 @@
         background:var(--bg-card-alt); color:var(--text);
         font:inherit; outline:none;
       }
-      .most-search-input:focus { border-color:var(--accent-c-yh); }
+      .most-search-input:focus { border-color:var(--accent-point); }
       .most-search-button {
         padding:.75rem 1rem; border:1px solid var(--border);
         border-radius:var(--radius); background:var(--bg-card-alt);
         color:var(--text); font:inherit; font-weight:600; cursor:pointer;
       }
-      .most-search-button:hover { border-color:var(--accent-c-yh); }
-      .most-search-status { margin-top:.65rem; color:var(--text-muted); font-size:.85rem; }
-      .most-search-results { display:flex; flex-direction:column; gap:.55rem; margin-top:.9rem; }
+      .most-search-button:hover { border-color:var(--accent-point); }
+      .most-search-panel[hidden] { display:none; }
+      .most-search-status { color:var(--text-muted); font-size:.85rem; }
+      .most-search-results { display:flex; flex-direction:column; gap:.55rem; margin-top:.7rem; }
       .most-search-result {
         display:block; padding:.75rem .9rem;
         border:1px solid var(--border); border-radius:var(--radius);
         color:var(--text); text-decoration:none; background:var(--bg-card-alt);
       }
-      .most-search-result:hover { border-color:var(--accent-c-yh); }
+      .most-search-result:hover { border-color:var(--accent-point); }
       .most-search-result-title { margin-bottom:.25rem; color:var(--text-muted); font-size:.8rem; }
       .most-search-result-text { line-height:1.55; }
-      .most-search mark { padding:0 .1em; border-radius:3px; background:#ffe66d; color:#222; }
+      .most-search mark {
+        padding:0 .1em; border-radius:3px;
+        background:var(--mark-bg); color:var(--mark-text);
+      }
       .most-search-target {
         scroll-margin-top: 2rem;
-        outline: 3px solid #ffe66d !important;
+        outline: 3px solid var(--accent-point) !important;
         outline-offset: 4px;
         border-radius: 6px;
       }
@@ -101,7 +110,8 @@
   }
 
   function makeSearchBox() {
-    if (!document.body.classList.contains("index-page")) return;
+    const isReader = document.body.classList.contains("reader-page");
+    if (!isReader && !document.body.classList.contains("index-page")) return;
     if (document.querySelector(".most-search")) return;
 
     installStyles();
@@ -115,22 +125,54 @@
                aria-label="로그 내용 검색">
         <button class="most-search-button" type="submit">검색</button>
       </form>
-      <div class="most-search-status" aria-live="polite"></div>
-      <div class="most-search-results"></div>
+      <div class="most-search-panel" hidden>
+        <div class="most-search-status" aria-live="polite"></div>
+        <div class="most-search-results"></div>
+      </div>
     `;
 
-    const wrap = document.querySelector(".index-wrap");
-    const nav = document.querySelector(".index-nav");
-    if (wrap) {
-      if (nav) wrap.insertBefore(box, nav);
-      else wrap.prepend(box);
+    if (isReader) {
+      document.querySelector(".reader-search-slot")?.appendChild(box);
+    } else {
+      const wrap = document.querySelector(".index-wrap");
+      const nav = document.querySelector(".index-nav");
+      if (wrap) {
+        if (nav) wrap.insertBefore(box, nav);
+        else wrap.prepend(box);
+      }
     }
 
     const form = box.querySelector("form");
     const input = box.querySelector("input");
+    const panel = box.querySelector(".most-search-panel");
+
+    const closePanel = () => {
+      panel.hidden = true;
+      box.querySelector(".most-search-results").innerHTML = "";
+      box.querySelector(".most-search-status").textContent = "";
+    };
+
     form.addEventListener("submit", e => {
       e.preventDefault();
       runSearch(input.value.trim(), box);
+    });
+
+    // 검색어를 지우면 결과 패널도 같이 닫습니다.
+    input.addEventListener("input", () => {
+      if (!input.value.trim()) closePanel();
+    });
+
+    input.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      input.value = "";
+      closePanel();
+    });
+
+    // 결과를 고르거나 바깥을 누르면 닫습니다.
+    document.addEventListener("click", e => {
+      if (panel.hidden) return;
+      if (e.target.closest(".most-search-result")) closePanel();
+      else if (!e.target.closest(".most-search")) closePanel();
     });
 
     const query = new URLSearchParams(location.search).get(SEARCH_PARAM);
@@ -143,12 +185,16 @@
   async function runSearch(query, box) {
     const status = box.querySelector(".most-search-status");
     const results = box.querySelector(".most-search-results");
+    const panel = box.querySelector(".most-search-panel");
     results.innerHTML = "";
 
     if (!query) {
-      status.textContent = "검색어를 입력해 주세요.";
+      panel.hidden = true;
+      status.textContent = "";
       return;
     }
+
+    panel.hidden = false;
 
     const links = getLogLinks();
     if (!links.length) {

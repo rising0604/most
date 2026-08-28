@@ -1,28 +1,97 @@
-/* TTobot roleplay log — shared styles */
+/* TTobot roleplay log — shared styles
+ *
+ * 컬러 구조
+ *   라이트/다크 두 팔레트가 표면색을 정의하고, 그 위에 세 가지 색을
+ *   theme.js 콘솔이 인라인 스타일로 덮어씁니다.
+ *     --accent-point  메인색. 선택 상태·포커스·검색 하이라이트.
+ *     --accent-ghost  캐릭터 1
+ *     --accent-nomos  캐릭터 2
+ *
+ * 모드 결정
+ *   theme.js 가 시스템 설정을 해석해 :root[data-theme] 를 항상 명시합니다.
+ *   JS가 없을 때만 prefers-color-scheme 안전망이 동작합니다.
+ */
 
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
+/* ─────────────────────────────────────────────
+   비색상 토큰 + 라이트 팔레트 (JS 없을 때의 기본값)
+   ───────────────────────────────────────────── */
 :root {
-  --bg-page: #fff8aa;
-  --bg-card: #fffefb;
-  --bg-card-alt: #fffde9;
-  --border: #f9f4b5;
-  --text: #2c2825;
-  --text-muted: #7a736a;
-  --shadow: 0 1px 3px rgba(44, 40, 37, 0.06);
   --radius: 10px;
   --font-sans: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   --max-width: 52rem;
 
-  /* per-character accents */
-  --accent-c-yh: #720000;
-  --accent-c-yh-bg: #e8f0f6;
-  --accent-p-ryang: #8b4a52;
-  --accent-p-ryang-bg: #f5e8ea;
-  --accent-autobot: #5c5a7a;
-  --accent-autobot-bg: #ecebf2;
-  --accent-autorobo: #4a6b5c;
-  --accent-autorobo-bg: #e6efe9;
+  --bg-page: #f3f5f7;
+  --bg-card: #ffffff;
+  --bg-card-alt: #f7f9fb;
+  --border: #e1e6ec;
+  --text: #1b2733;
+  --text-muted: #5d6a78;
+  --shadow: 0 1px 3px rgba(27, 39, 51, 0.07);
+  --accent-ghost: #2f6690;
+  --accent-nomos: #8c4a63;
+  --accent-point: #4c5fd7;
+  --on-point: #ffffff;
+  --on-ghost: #ffffff;
+  --on-nomos: #ffffff;
+}
+
+/* JS가 없을 때만 쓰이는 다크 안전망 — data-theme 이 붙는 순간 무력화됩니다. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg-page: #0d141d;
+    --bg-card: #151d28;
+    --bg-card-alt: #1a2430;
+    --border: #283443;
+    --text: #e3eaf3;
+    --text-muted: #93a1b3;
+    --shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    --accent-ghost: #7fbbe8;
+    --accent-nomos: #dd93ab;
+    --accent-point: #8b9bfa;
+    --on-point: #0d141d;
+    --on-ghost: #0d141d;
+    --on-nomos: #0d141d;
+  }
+}
+
+:root[data-theme="light"] {
+  --bg-page: #f3f5f7;
+  --bg-card: #ffffff;
+  --bg-card-alt: #f7f9fb;
+  --border: #e1e6ec;
+  --text: #1b2733;
+  --text-muted: #5d6a78;
+  --shadow: 0 1px 3px rgba(27, 39, 51, 0.07);
+  --accent-ghost: #2f6690;
+  --accent-nomos: #8c4a63;
+  --accent-point: #4c5fd7;
+  --on-point: #ffffff;
+  --on-ghost: #ffffff;
+  --on-nomos: #ffffff;
+}
+
+:root[data-theme="dark"] {
+  --bg-page: #0d141d;
+  --bg-card: #151d28;
+  --bg-card-alt: #1a2430;
+  --border: #283443;
+  --text: #e3eaf3;
+  --text-muted: #93a1b3;
+  --shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  --accent-ghost: #7fbbe8;
+  --accent-nomos: #dd93ab;
+  --accent-point: #8b9bfa;
+  --on-point: #0d141d;
+  --on-ghost: #0d141d;
+  --on-nomos: #0d141d;
+}
+
+/* 검색 하이라이트는 포인트색에서 파생시켜, 직접 고른 색도 그대로 따라오게 합니다. */
+:root {
+  --mark-bg: color-mix(in oklab, var(--accent-point) 32%, var(--bg-card));
+  --mark-text: var(--text);
 }
 
 *,
@@ -44,8 +113,6 @@ body {
   line-height: 1.65;
   color: var(--text);
   background: var(--bg-page);
-  background-image: radial-gradient(circle at 20% 0%, #fffffc 0%, transparent 50%),
-    radial-gradient(circle at 80% 100%, #fffde2 0%, transparent 45%);
   min-height: 100vh;
 }
 
@@ -75,20 +142,12 @@ body {
   background: var(--bg-card-alt);
 }
 
-.ttobot-status[data-account="@C_YH"] {
-  border-left-color: var(--accent-c-yh);
+.ttobot-status[data-account="@Ghost_ATA"] {
+  border-left-color: var(--accent-ghost);
 }
 
-.ttobot-status[data-account="@P_ryang"] {
-  border-left-color: var(--accent-p-ryang);
-}
-
-.ttobot-status[data-account="@autobot"] {
-  border-left-color: var(--accent-autobot);
-}
-
-.ttobot-status[data-account="@autorobo"] {
-  border-left-color: var(--accent-autorobo);
+.ttobot-status[data-account="@NOMOS_ATA"] {
+  border-left-color: var(--accent-nomos);
 }
 
 /* avatar column */
@@ -108,7 +167,6 @@ body {
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
-  border: 2px solid var(--border);
   background: var(--bg-card-alt);
 }
 
@@ -129,20 +187,12 @@ body {
   color: var(--text-muted);
 }
 
-.ttobot-status[data-account="@C_YH"] .ttobot-name {
-  color: var(--accent-c-yh);
+.ttobot-status[data-account="@Ghost_ATA"] .ttobot-name {
+  color: var(--accent-ghost);
 }
 
-.ttobot-status[data-account="@P_ryang"] .ttobot-name {
-  color: var(--accent-p-ryang);
-}
-
-.ttobot-status[data-account="@autobot"] .ttobot-name {
-  color: var(--accent-autobot);
-}
-
-.ttobot-status[data-account="@autorobo"] .ttobot-name {
-  color: var(--accent-autorobo);
+.ttobot-status[data-account="@NOMOS_ATA"] .ttobot-name {
+  color: var(--accent-nomos);
 }
 
 /* content */
@@ -159,6 +209,29 @@ body {
   word-break: keep-all;
   overflow-wrap: break-word;
   white-space: pre-wrap;
+}
+
+/* 첨부 이미지 */
+.ttobot-media {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+  gap: 0.5rem;
+  margin-top: 0.65rem;
+}
+
+.ttobot-media:empty {
+  display: none;
+}
+
+.ttobot-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 24rem;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) - 3px);
+  background: var(--bg-card-alt);
 }
 
 /* timestamp */
@@ -187,114 +260,608 @@ body {
     width: 3rem;
     height: 3rem;
   }
-
-  .ttobot-content-text {
-    font-size: 1rem;
-  }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-page: #1a1917;
-    --bg-card: #242220;
-    --bg-card-alt: #2a2826;
-    --border: #3d3a36;
-    --text: #ebe8e4;
-    --text-muted: #9a948a;
-    --shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
-    --accent-c-yh: #7eb3d4;
-    --accent-c-yh-bg: #1e2a33;
-    --accent-p-ryang: #d48994;
-    --accent-p-ryang-bg: #332428;
-    --accent-autobot: #a9a6c8;
-    --accent-autobot-bg: #252430;
-    --accent-autorobo: #8fb89e;
-    --accent-autorobo-bg: #1f2a24;
-  }
-
-  body {
-    background-image: radial-gradient(circle at 20% 0%, #252320 0%, transparent 50%),
-      radial-gradient(circle at 80% 100%, #22201e 0%, transparent 45%);
-  }
+/* ─────────────────────────────────────────────
+   리더 — 3단. 좌우에 캐릭터, 가운데에 헤더와 대화.
+   좌우 목록은 그 캐릭터가 시작한 대화만 담습니다.
+   가운데 대화는 로그 HTML 을 iframe 으로 싣습니다 — file:// 에서도 열리고
+   3MB 를 미리 읽어둘 필요가 없습니다.
+   ───────────────────────────────────────────── */
+body.reader-page {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
 }
 
-/* —— index (목차) —— */
-body.index-page {
+.reader {
+  display: grid;
+  grid-template-columns: minmax(14rem, 17rem) minmax(0, 1fr) minmax(14rem, 17rem);
+  height: 100%;
+  background: var(--bg-card);
+}
+
+/* —— 좌우: 캐릭터 —— */
+.reader-side {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  min-height: 0;
+  padding: 0.9rem 0.75rem 0;
 }
 
-.index-wrap {
+/* 이 칸 전체가 쓰는 캐릭터 색. 아래 카드·이름 바·배지가 이 값을 물려받습니다. */
+.reader-side[data-character="nomos"] {
+  --character: var(--accent-nomos);
+}
+
+.reader-side[data-character="ghost"] {
+  --character: var(--accent-ghost);
+}
+
+.reader-portrait {
+  flex: 0 0 auto;
+  display: block;
   width: 100%;
-  max-width: var(--max-width);
+  aspect-ratio: 3 / 4;
+  padding: 0;
+  cursor: pointer;
+  background: var(--character) center/cover no-repeat;
+  border: 0;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.index-header {
-  margin-bottom: 2rem;
-  padding-bottom: 1.25rem;
+/* 이미지를 아직 안 넣었을 때 눌러서 넣으라는 표시 */
+.reader-portrait::after {
+  content: "이미지 넣기\A권장 480 × 640 (3:4)";
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 0.5rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.7;
+  text-align: center;
+  white-space: pre-line;
+  color: var(--on-point);
+  opacity: 0.9;
+}
+
+.reader-portrait[data-set="true"]::after {
+  content: "";
+  opacity: 0;
+  transition: opacity 0.15s;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.reader-portrait[data-set="true"]:hover::after {
+  content: "이미지 바꾸기\A권장 480 × 640 (3:4)";
+  color: #fff;
+  opacity: 1;
+}
+
+.reader-name {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.7rem 0 0.6rem;
+}
+
+.reader-name::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 5px;
+  height: 1.2rem;
+  border-radius: 2px;
+  background: var(--character);
+}
+
+.reader-name b {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 오른쪽 캐릭터는 좌우를 뒤집어 바깥쪽으로 붙입니다. */
+.reader-side[data-side="right"] .reader-name {
+  flex-direction: row-reverse;
+}
+
+.reader-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding-bottom: 4.5rem;
+}
+
+.reader-month {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin: 0.6rem 0 0.35rem;
+  padding: 0.25rem 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  background: var(--bg-card);
+}
+
+.reader-month:first-child {
+  margin-top: 0;
+}
+
+.reader-none {
+  padding: 1.2rem 0.4rem;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+/* 목록 한 줄 = 로그 하나. 대사를 먼저 보여 주고 날짜·시각은 아래에 답니다. */
+.reader-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 0.2rem 0.6rem;
+  width: 100%;
+  padding: 0.6rem 0.5rem;
+  font: inherit;
+  text-align: left;
+  color: var(--text);
+  background: none;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+/* 표면색끼리 섞으면 차이가 거의 없어서, 본문색을 살짝 타서 확실히 구분합니다. */
+.reader-item:hover {
+  background: color-mix(in oklab, var(--text) 5%, var(--bg-card));
+}
+
+.reader-item[aria-current="true"] {
+  background: color-mix(in oklab, var(--text) 9%, var(--bg-card));
+}
+
+.reader-avatar {
+  grid-row: 1 / 3;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 33%;
+  background: var(--bg-card-alt) center/cover no-repeat;
+}
+
+/* 대사 — 두 줄까지 보여 줍니다. */
+.reader-line {
+  grid-column: 2 / 4;
+  grid-row: 1;
+  font-size: 0.84rem;
+  font-weight: 500;
+  line-height: 1.45;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.reader-when {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: center;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.reader-badge {
+  grid-column: 3;
+  grid-row: 2;
+  justify-self: end;
+  align-self: center;
+  min-width: 1.3rem;
+  padding: 0.05rem 0.35rem;
+  font-size: 0.66rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--on-point);
+  background: var(--character);
+  border-radius: 999px;
+}
+
+/* —— 가운데: 헤더 + 대화 —— */
+.reader-center {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+
+.reader-banner {
+  position: relative;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: end center;
+  height: 9.5rem;
+  overflow: hidden;
+}
+
+.reader-banner-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  padding: 0;
+  cursor: pointer;
+  background: var(--bg-card-alt) center/cover no-repeat;
+  border: 0;
+}
+
+/* 헤더 이미지를 아래로 갈수록 배경색에 묻히게 덮습니다. */
+.reader-banner-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in oklab, var(--bg-card) 15%, transparent) 0%,
+    color-mix(in oklab, var(--bg-card) 55%, transparent) 45%,
+    var(--bg-card) 100%
+  );
+}
+
+/* 아직 이미지를 안 넣었을 때만 안내를 띄웁니다. */
+.reader-banner-image:not([data-set="true"])::before,
+.reader-banner-image[data-set="true"]:hover::before {
+  content: "헤더 이미지 넣기 · 권장 1280 × 320 (4:1)";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.reader-banner-image[data-set="true"]:hover::before {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.reader-banner-image:hover {
+  filter: brightness(1.03);
+}
+
+.reader-pair {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0.9rem;
+  padding: 0.2rem 0.5rem;
+  font: inherit;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.28em;
+  text-indent: 0.28em;
+  color: var(--text);
+  background: none;
+  border: 0;
+  border-radius: 7px;
+  cursor: text;
+}
+
+.reader-pair:hover {
+  background: color-mix(in oklab, var(--text) 8%, transparent);
+}
+
+.reader-pair-input {
+  position: relative;
+  z-index: 1;
+  width: min(20rem, 80%);
+  margin-bottom: 0.9rem;
+  padding: 0.2rem 0.5rem;
+  font: inherit;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.28em;
+  text-align: center;
+  color: var(--text);
+  background: var(--bg-card);
+  border: 1px solid var(--accent-point);
+  border-radius: 7px;
+}
+
+/* 검색 — 입력칸만 자리를 차지하고, 결과는 대화 위에 떠서 덮습니다.
+   결과가 자리를 밀어내면 대화가 눌려서 읽기 나빠집니다. */
+.reader-search-slot:not(:empty) {
+  position: relative;
+  z-index: 20;
+  flex: 0 0 auto;
+  padding: 0.6rem 1rem;
   border-bottom: 1px solid var(--border);
 }
 
-.index-header h1 {
-  margin: 0 0 0.4rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
-
-.index-header p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-
-.index-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 1.75rem;
-}
-
-.index-section h2 {
-  margin: 0 0 0.65rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--text-muted);
-}
-
-.index-list {
-  list-style: none;
+.reader-search-slot .most-search {
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
-.index-list a {
-  display: block;
-  padding: 0.75rem 1rem;
+.reader-search-slot .most-search-panel {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  top: calc(100% - 0.3rem);
+  max-height: min(30rem, 65vh);
+  overflow-y: auto;
+  padding: 0.8rem;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+}
+
+.reader-thread {
+  /* 남는 높이를 전부 차지해야 iframe 이 끝까지 펼쳐집니다. */
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  background: var(--bg-page);
+}
+
+.reader-thread-head {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.reader-thread-head h2 {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.reader-thread-head span {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+.reader-back {
+  display: none;
+  padding: 0.3rem 0.6rem;
+  font: inherit;
+  font-size: 0.8rem;
   color: var(--text);
-  text-decoration: none;
-  font-weight: 500;
-  transition: border-color 0.15s, transform 0.15s;
+  background: var(--bg-card-alt);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  cursor: pointer;
 }
 
-.index-list a:hover {
-  border-color: var(--accent-c-yh);
-  transform: translateX(2px);
+.reader-frame {
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 0;
+  border: 0;
+  background: var(--bg-page);
 }
 
-.index-section:nth-child(2) .index-list a:hover {
-  border-color: var(--accent-p-ryang);
+.reader-empty {
+  flex: 0 0 auto;
+  padding: 0.9rem 1.1rem;
+  color: var(--text-muted);
+  font-size: 0.82rem;
 }
 
-.index-section:nth-child(3) .index-list a:hover {
-  border-color: var(--accent-autobot);
+/* —— 좁은 화면: 한 줄로 쌓고, 대화는 덮어서 보여 줍니다 —— */
+@media (max-width: 63.99rem) {
+  body.reader-page {
+    height: auto;
+    overflow: auto;
+  }
+
+  .reader {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .reader-center {
+    order: -1;
+    border: 0;
+  }
+
+  .reader-side {
+    border-top: 1px solid var(--border);
+    padding-bottom: 1rem;
+  }
+
+  .reader-portrait {
+    aspect-ratio: 16 / 9;
+  }
+
+  .reader-scroll {
+    overflow: visible;
+    padding-bottom: 0;
+  }
+
+  .reader-thread {
+    display: none;
+  }
+
+  .reader[data-open="true"] .reader-thread {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+  }
+
+  .reader-back {
+    display: block;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   대화 칸 안의 로그 — 캐릭터 색 말풍선
+   왼쪽 칸의 캐릭터(노모스)는 왼쪽에, 오른쪽 칸의 캐릭터(고스트)는 오른쪽에 붙습니다.
+   theme.js 가 iframe 안이면 body 에 .in-pane 을 붙입니다.
+   ───────────────────────────────────────────── */
+body.in-pane,
+body.in-pane .ttobot-log {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 0.75rem 1rem 4rem;
+}
+
+body.in-pane .ttobot-log {
+  padding: 0;
+}
+
+body.in-pane .ttobot-status {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.45rem;
+  padding: 0.2rem 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+body.in-pane .ttobot-status:nth-child(even) {
+  background: none;
+}
+
+/* 어느 쪽에 붙고 무슨 색을 쓸지 — 계정으로 가릅니다. */
+body.in-pane .ttobot-status[data-account="@NOMOS_ATA"] {
+  flex-direction: row;
+  --bubble: var(--accent-nomos);
+  --bubble-text: var(--on-nomos);
+}
+
+body.in-pane .ttobot-status[data-account="@Ghost_ATA"] {
+  flex-direction: row-reverse;
+  --bubble: var(--accent-ghost);
+  --bubble-text: var(--on-ghost);
+}
+
+body.in-pane .ttobot-avatar-wrapper {
+  flex: 0 0 auto;
+  gap: 0.2rem;
+  min-width: 0;
+  width: 2.6rem;
+}
+
+body.in-pane .ttobot-avatar {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+body.in-pane .ttobot-name {
+  max-width: 3.4rem;
+  font-size: 0.62rem;
+  line-height: 1.2;
+}
+
+/* 말풍선 */
+body.in-pane .ttobot-content {
+  position: relative;
+  flex: 0 1 auto;
+  max-width: min(30rem, 72%);
+  padding: 0.6rem 0.85rem;
+  color: var(--bubble-text);
+  background: var(--bubble);
+  border-radius: 15px;
+}
+
+body.in-pane .ttobot-content::before {
+  content: "";
+  position: absolute;
+  bottom: 0.6rem;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+}
+
+body.in-pane .ttobot-status[data-account="@NOMOS_ATA"] .ttobot-content::before {
+  left: -10px;
+  border-right-color: var(--bubble);
+  border-left-width: 4px;
+}
+
+body.in-pane .ttobot-status[data-account="@Ghost_ATA"] .ttobot-content::before {
+  right: -10px;
+  border-left-color: var(--bubble);
+  border-right-width: 4px;
+}
+
+body.in-pane .ttobot-content-text {
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+body.in-pane .ttobot-media {
+  margin-top: 0.5rem;
+}
+
+body.in-pane .ttobot-media img {
+  max-height: 18rem;
+}
+
+/* 시각은 말풍선 안쪽 아래에 붙습니다. */
+/* 날짜와 시각을 두 줄로 세워 말풍선 옆에 둡니다. theme.js 가 span 으로 나눕니다. */
+body.in-pane .ttobot-time {
+  flex: 0 0 auto;
+  align-self: flex-end;
+  margin: 0;
+  padding: 0 0 0.15rem;
+  border: 0;
+  font-size: 0.67rem;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+body.in-pane .ttobot-time span {
+  display: block;
+}
+
+body.in-pane .ttobot-status[data-account="@NOMOS_ATA"] .ttobot-time {
+  text-align: left;
+}
+
+body.in-pane .ttobot-status[data-account="@Ghost_ATA"] .ttobot-time {
+  text-align: right;
+}
+
+@media (min-width: 640px) {
+  body.in-pane {
+    padding: 0.75rem 1.25rem 4rem;
+  }
+
+  body.in-pane .ttobot-avatar {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
 }
