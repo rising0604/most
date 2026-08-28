@@ -85,6 +85,10 @@ window.MOST_MANIFEST = {
     "0820.html": {
       "ghost": "06",
       "nomos": "06"
+    },
+    "0824.html": {
+      "ghost": "06",
+      "nomos": "06"
     }
   },
   "logs": [
@@ -317,6 +321,24 @@ window.MOST_MANIFEST = {
       "avatar": "images/ghost_06.png",
       "text": "(그 말을 끝으로 별 말도 못하고 까무룩 잠이 들었다. 간만에 정말 피곤했는지 늦잠을 잔다.)",
       "count": 533,
+      "gens": {
+        "ghost": "06",
+        "nomos": "06"
+      }
+    },
+    {
+      "file": "0824.html",
+      "month": 8,
+      "day": 24,
+      "part": null,
+      "label": "8월 24일",
+      "stamp": "2026년 8월 24일 오후 01:25",
+      "account": "@NOMOS_ATA",
+      "character": "nomos",
+      "speaker": "윤시현",
+      "avatar": "images/nomos_06.png",
+      "text": "(네가 깨는 것을 기다린다. 이번에는 움직이지 않는다. 네가 눈을 뜨면 자신을 바로 볼 수 있게끔.)",
+      "count": 518,
       "gens": {
         "ghost": "06",
         "nomos": "06"
