@@ -209,6 +209,7 @@ body {
   word-break: keep-all;
   overflow-wrap: break-word;
   white-space: pre-wrap;
+  text-align: justify;
 }
 
 /* 첨부 이미지 */
