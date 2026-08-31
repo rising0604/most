@@ -335,10 +335,28 @@ window.MOST_MANIFEST = {
       "stamp": "2026년 8월 24일 오후 01:25",
       "account": "@NOMOS_ATA",
       "character": "nomos",
-      "speaker": "윤시현",
+      "speaker": "노모스",
       "avatar": "images/nomos_06.png",
       "text": "(네가 깨는 것을 기다린다. 이번에는 움직이지 않는다. 네가 눈을 뜨면 자신을 바로 볼 수 있게끔.)",
       "count": 518,
+      "gens": {
+        "ghost": "06",
+        "nomos": "06"
+      }
+    },
+    {
+      "file": "0828.html",
+      "month": 8,
+      "day": 28,
+      "part": null,
+      "label": "8월 28일",
+      "stamp": "2026년 8월 28일 오전 09:09",
+      "account": "@NOMOS_ATA",
+      "character": "nomos",
+      "speaker": "노모스",
+      "avatar": "images/nomos_06.png",
+      "text": "(잠에 빠지고, 눈을 뜬다. 아직은 낯선 풍경, 그 사이에 있는 너. 너는 깨어 있을까)<",
+      "count": 286,
       "gens": {
         "ghost": "06",
         "nomos": "06"
