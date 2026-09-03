@@ -105,6 +105,10 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+html::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   margin: 0;
   padding: 1.5rem 1rem 3rem;
@@ -380,6 +384,11 @@ body.reader-page {
   min-height: 0;
   overflow-y: auto;
   padding-bottom: 4.5rem;
+  -ms-overflow-style: none;
+}
+
+.reader-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 .reader-month {
