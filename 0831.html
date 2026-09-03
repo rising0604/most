@@ -1,0 +1,3511 @@
+<!DOCTYPE html>
+<html lang="ko" data-gen-ghost="06" data-gen-nomos="06">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8월 31일</title>
+  <script id="most-theme-boot">
+    (function () {
+      var root = document.documentElement;
+      function readable(hex) {
+        var f = function (i) {
+          var v = parseInt(hex.substr(i, 2), 16) / 255;
+          return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+        };
+        var L = 0.2126 * f(1) + 0.7152 * f(3) + 0.0722 * f(5);
+        return 1.05 / (L + 0.05) >= (L + 0.05) / 0.0567 ? "#ffffff" : "#0d141d";
+      }
+      try {
+        var hash = (location.hash.match(/theme=([^&]+)/) || [])[1];
+        var raw = hash
+          ? atob(decodeURIComponent(hash))
+          : localStorage.getItem("most-theme") || "{}";
+        var state = JSON.parse(raw) || {};
+        var mode = state.mode || "auto";
+        if (mode === "auto") {
+          mode = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        root.setAttribute("data-theme", mode);
+        var custom = (state.custom || {})[mode] || {};
+        for (var key in custom) {
+          if (!/^#[0-9a-f]{6}$/i.test(custom[key])) continue;
+          root.style.setProperty("--accent-" + key, custom[key]);
+          if (key === "ghost" || key === "nomos") {
+            root.style.setProperty("--on-" + key, readable(custom[key]));
+          }
+        }
+      } catch (e) {
+      }
+      try {
+        var saved = JSON.parse(localStorage.getItem("most-avatars") || "{}");
+        var rules = "";
+        var accounts = { ghost: "@Ghost_ATA", nomos: "@NOMOS_ATA" };
+        for (var name in accounts) {
+          var gen = root.getAttribute("data-gen-" + name);
+          var url = gen && saved[name + ":" + gen];
+          if (!url || url.slice(0, 11) !== "data:image/") continue;
+          var at = '.ttobot-status[data-account="' + accounts[name] + '"] .ttobot-avatar';
+          rules += at + '{background-image:url("' + url + '");background-size:cover;background-position:center}';
+          rules += at + " img{visibility:hidden}";
+        }
+        if (rules) {
+          var style = document.createElement("style");
+          style.id = "most-avatar-style";
+          style.textContent = rules;
+          document.head.appendChild(style);
+        }
+      } catch (e) {
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="style/ttobot.css">
+  <script src="search.js"></script>
+</head>
+<body>
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(언제 잠에 들었더라. 집에 있다는 안정감에 편안하게 잠에 빠졌지만, 눈을 뜨는 건 여느때 처럼 굉장히 이른 시간이다. 제 품에 잠든 너를 한참이고 바라보면서, 머리를 조심스럽게 쓸었다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오전 02:17</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(손길에 옅게 잠에서 깼다. 여전히 눈을 제대로 뜨지도 못하고 품을 파고든다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오전 05:35</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(파고드는 네 모습에 꼭, 안고는 다독인다. 더 자도 된다는 듯, 일정한 박자로.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오전 06:11</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(그럼 또 금세 다시금 잠이 든다. 네 품안에서, 아주 편한 듯이.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오전 06:47</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(그 모습에 머리를 쓰다듬으면서 슬며시 미소짓는다. 잘 자요, 한 마디 속삭임과 함께. 다시금 네가 깨어나길 기다리며 안을 뿐이다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오전 06:51</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(수면 시간이 조금 늘었나. 다시금 살살 깨어나기 시작한다. 비몽사몽한 눈으로 손을 더듬어 네 옷자락부터 쥔다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오전 08:35</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(이마에 짤막하게 입을 맞추고는) ……잘 잤어요?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오전 08:36</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">응……. (품에 얼굴을 묻고 웅얼거린다.) …나 얼마나 잤어.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오전 08:38</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">평소보다는 두 시간 정도 더 잔 것 같은데요? …가끔은 이렇게 푹 자는 날도 필요하겠죠.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오전 08:39</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">아………. (앓는 소리를 내며 너를 더 세게 끌어안고 얼굴을 마구 부빈다.) 피곤해….</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오전 08:44</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">요 며칠 너무 많이 돌아다녔나…. 아직 나가기 전, 시간 여유 있죠? (네 머리를 살살 쓰다듬으면서) 조금 더 쉬어요.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오전 09:39</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(그도 그럴게 쉬는 날엔 종일 집에 누워있는 것 외에는 안하는 이가, 일본에 다녀온 이후로 단 하루도 쉬지않고 움직였다. 죽어갈 수밖에 없겠찌.) 10시 까지는 가야해…. 가서 헤어랑 메이크업 해야해서…….</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오전 09:47</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(시간을 확인하면, 지금쯤 준비해야 여유롭게 도착할 시간이다. 그래서) ……어쩔 수 없네요. 지금 곧장 준비하죠. ……잠 좀 깨시고. (네 눈가를 손으로 살살 쓸어준다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오전 09:55</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(양 팔을 벌린다. 여전히 눈을 감고.) 네가 나 데려가….</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오전 10:00</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(세수를 시켜야겠다 싶어, 널 들어 올려 안은 뒤 욕실로 걸음을 옮긴다. 이동하는 와중에도 네 얼굴을 확인하곤 세면대 앞에 세워준다. 제대로 설 수는 있겠지.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오전 10:53</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(받아주면 어디까지 어리광 부려도 되는지, 어디까지 부릴 수 있는지 그런 것따위는 잘 모르는 윤시현이다. 해봤어야 알지. 그러니, 어릴 적. 자신이 받고 싶었던 만큼 할 수밖에. 얌전히 서서 눈만 감고 있는다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오전 10:54</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(손에 물을 묻혀서 조심스럽게 세수시켜 준다. 눈의 이물질 같은 걸 떼어주고, 클렌징폼으로 꼼꼼히 얼굴을 닦아내고, 물로 씻겨낸다) 잠은 좀 깼나요?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오전 10:56</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(기계로 대체된 손이 얼굴을 스칠 때마다 무겁고 뭉툭해서 고개가 몇 번이나 뒤로 밀려났다 돌아온다. 자극으로 인해 얼굴이 조금은 붉어졌으려나. 고개만 끄덕인다.) 양치도….</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오전 11:02</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(그래서 조심스러웠다. 하지만 어쩔 수 없이 닿는 건 도리가 없어서…. 이럴 땐 섬세해지지 못하는 게 참 아쉽다. 네 칫솔에 치약을 짜고 양치질을 시켜준다. 이번에도 조심스럽게, 잇몸이 다치지 않게끔 주의하면서) 아. (양치를 마치고 나면 입을 헹구기 위해 양치 컵에 물을 따라 네게 가져다 댄다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오전 11:54</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(시키는대로 순순히 따라 양치까지 마쳤다. 정말 어린 아이라도 된 것 같은 모습에 웃음이 났다.) ……진짜 애같네, 나. 정작 어릴 땐 이런 거 받아본 적도 없었는데.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오전 11:55</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(피식 웃고는) 뭘 새삼스럽게. 그리고 이 정도는 해줄 수 있는걸요. 이래도 잠이 안 깨면 샤워까지 제가 해드려야 하나 고민도 좀, 했네요.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오전 11:56</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(끌어안고 뺨을 부빈다. 고맙다고 뺨에 가볍게 입을 맞추기도 했다. 아직 잠이 완전히 깨지는 않았기에 그런 행동이 꽤 자연스럽다.) 너도 씻고 와. 같이 나가려면. 시간 빠듯하다며.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오전 11:57</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그럼, 저도 씻고 올게요. ……시현 씻다가 졸지 말아요. 오늘따라 유독 피곤해 보여서. (익숙하게, 네 이마에 입을 맞추고는 욕실을 나선다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 01:06</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">며칠을 내내 쉬지도 못하고 돌아다녔으니까…. (어차피 가면 유니폼이나 입어야할테니 대충 아무 옷이나 주워입고 너를 기다리는 동안 다시 침대에 누워 잠깐 잠이 들었다. 매니저가 태우러 올 테니 도착하면 전화하겠거니 싶어서. 아니면 집에 들어오거나.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 01:09</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(씻고, 옷까지 갈아입고 나오면 침대에서 잠든 널 발견한다. 그 옆에 앉아서는 머리를 살살 쓰다듬고는) 시현, 많이 피곤해요? (그러다 네 핸드폰에서 전화벨 소리가 들리면, 조심스럽게 널 깨운다) 전화.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 01:12</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(눈은 뜨지도 못하고 워치만 두드려 전화를 받았다. 스피커를 통해 크게 들리는 소리에 "어, 나갈게." "데리고 간다." "혼자 있다가 괜히 사람들한테 휘말려서 사고 치는 것보다 낫잖아." 그런 말이나 남기고서야 비척비척 일어났다. 네게 양 팔을 벌린다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 01:24</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(익숙하다는 듯이 너를 끌어안고, 들어 올려 안는다) 이러고 가요? 아니면, 시현이 걸을래요? (매니저 눈치를 보는 건 아닌지, 걱정이 돼서 괜스레 묻는 말이기도 하다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 01:39</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">네가 요새 나 혹사 시켜서 존나 피곤해. 그냥 이렇게 들고 가…. (후드를 깊게 눌러쓰고 그냥 네 품에 안겨 눈이나 감는다. 웅얼웅얼, 말했다.) 지하1층에…, 검은색 밴….</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 01:42</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(나 때문에 혹사했던가, 잠시 고민하더니) ……같이 다니는 거, 피곤했어요? (네 체력의 한계를 모르고 자신의 기준으로 생각하니 모를 법도 하지. 네게 들린 너를 폭, 안고 지하 1층으로 향한다. 검은색 밴…. 짧게 중얼거리면서 주변을 두리번거리면, 대기하고 있는 차량을 발견한다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 01:54</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">이렇게 연속해서 못 쉬고 다닌 건 처음이라…. (경기로 인한 장기 출장을 갈 때도, 경기 없는 날엔 숙소에 꼼짝없이 박혀 종일 움직이지 않을 정도였으니 말 다했지 뭐.) 네가 싫다는 게 아니라……. 싫었다는 것도 아니고, 그냥 피곤했다고…. (어깨에 뺨을 부빈다. 혹여라도 네가 안좋은 쪽으로 생각할까봐.) 금방 지치는 거 알고 있었잖아. (기다린듯 문이 열리는 벤에 올라탄다. 맨 뒷자리로 가자고 하고서는 운전석의 매니저와 멀찍이 앉아 네 허벅지를 베고 아주 누워버렸다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 01:58</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(다음부터는 조금, 쉬는 시간도 가져볼까. 하긴. 그간 못 봤다고 내가 너무 들뜨긴 했지. 그런 생각이 들 때쯤 네 얼굴이 제 어깨에 닿는다) 다음부터는 쉬는 날도 가지면서 돌아다니도록 해요. (그리고 네가 제 무릎에 누우면 네 머리를 살살 쓸면서 조금이나마 쉬게끔 둔다. 매니저 눈치를 한 번 살폈다가도, 그가 자신에 대해 별생각 없어 보이면 다시 네게 시선이 간다. 자는 모습마저 보는 게 즐겁다고, 그 모습을 그저 바라만 본다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 02:00</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">도착하면 사고치지 말고 얌전히 있어야해, 알겠지…. (잠결에 웅얼거리면서도 네게 그런 말을 했다. 허리를 둘러 안아 배에 얼굴을 묻고 편하게 존다. 이 차 내부의 공간은 제게 '편한 공간'의 범주에 속하는 곳이라서.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 02:04</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(자신이 사고를 쳐봤자 그 범주는 정해져 있지 않나, 아마 얌전히 있는 것을 택할 것이다. ……아마도. 네가 깨지 않게 어떠한 소리도 내지 않고 창밖을 바라볼 뿐이다. 시간이 지나고 목적지에 도달할 때쯤에서야 조심스럽게 널 깨운다. 이마에 입을 맞추면서까지)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 02:16</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(아마 백미러로 그 모습을 지켜보던 매니저가 짧은 욕짓기를 뱉었을 것이다. 부정적인게 아닌, 그저 감탄사를 대신해서. 그제야 부스스 일어난다. 늘어지게 하품을 하며 기지개를 켰다.) 오늘 촬영 끝나면 바로 집 가서 자자. ……아니다, 베이킹 할 것들 사기로 했지. 그거 사고 가자….</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 02:19</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">피곤하면, 먼저 들어가서 자고 있어도 돼요. 장 보는 것쯤은 혼자서도 할 수 있으니까…. (네 손을 잡고 차에서 내리는 걸 돕는다. 스튜디오에 들어가기 전, 네 얼굴을 손으로 한 번 쓸었다. 이번엔 장갑을 끼고 있으니, 붉어질 일은 없겠지.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 02:24</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(그 장갑이 괜히 아쉽다. 자신이 밖에 나올 적엔 얼굴을 가리는 것처럼, 너도 그런 거겠지만. 네 맨손에 닿지 못한다는게 괜히 서운해서. 손목 쪽 벌어진 틈으로 검지만 넣어 괜히 손바닥 끄트머리를 문질렀다.) 같이 가. 혼자 가면 심심하잖아.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 02:28</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(그 모습을 보곤 피식 웃어버린다. 주변 눈치를 살짝 보더니 장갑을 슬며시 빼내어, 네 손을 잡았다가 인기척이 들리면 그제야 다시 장갑을 끼운다) ……그렇기야 한데, 괜찮겠어요? 오는 내내 계속 졸았잖아요.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 02:32</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그만큼 잤으니까 이제 좀 정신 차려야지. (네 머리를 살살 쓸어주고 다시금 장갑 위로 손을 겹쳐 쥔다. 스튜디오 안으로 들어가서, 너를 대기실까지 데려갈 수는 없어서. 한쪽에 의자나 담요를 가져와 네게 건넸다.) 여기서 기다리고 있어. 안에서 헤어랑 메이크업 받고 옷 갈아입고 나올 테니까. 아까 미리 말해서 단체컷 먼저 찍자고 해뒀거든? 이후에 바로 내 개인 컷 찍고. 그리고 그냥 갈 거야.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 02:33</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그래도 좀 나아진 것 같아서 다행이네요. ……촬영이라고 했으니까, 피곤한 얼굴로 촬영에 임하게 둘 수도 없었고 하니. (얌전히 의자에 앉고, 담요를 끌어안는다. 고개를 끄덕이고 너를 가만히 기다린다. 어떤 행동도 하지 않고 가만히 있는 것엔 도가 텄다. 그래서, 아무런 미동 없이 기다린다. 지나가던 스태프들은 낯선 사람을 보고 의아하다는 표정을 짓지만, 그런데도 역시. 미동 없다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 02:59</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(1시간 쯤 기다리면 유니폼으로 갈아입고 한눈에 봐도 깔끔해진 차림으로 걸어나온다. 얌전히 기다리고 있는 네게 곧장 향해 머리를 두어번 쓰다듬었다.) 잘 기다리고 있었냐? 시비거는 사람은 없었고?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 03:03</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(언제쯤 끝나려나, 다리를 까딱거리기도 하고. 그렇게 얌전히 있다 보면 네가 나온다. 표정이 삽시간에 밝아지면서, 담요를 내팽개치고 너를 꽉 안는다) 시현! (뭐가 그리도 반가운지, 고작 1시간쯤 떨어져 있었다고 이런다) 아무도 말 안 걸던데요. 그래서 편하게 기다릴 수 있었어요.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 03:06</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(그대로 네 품에 안겨 아무것도 하지 못했다. 큰 소리와 함께 벌어진 애정행각에 주위가 소란하다. 웅성거리는 소리들은 모두 이 모습을 담고 있겠지. 검지를 굽혀 미간에 가져다 대고 눈을 감았다가 느리게 뜬다.) 그래도 대화라도 하면서 기다리지. 심심하잖아.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 03:12</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(주변 분위기를 눈치채지 못하고, 그저 철없이 웃으면서) 낯가리는 거 알잖아요. …괜히 말 걸면, 그 사람들도 당황할 테고. (안고 있던 몸을 물린다) 이대로 촬영장에 가나요? 촬영장은 들어가도 돼요?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 03:36</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">여기가 촬영장이야. 그러니까, 저기. (한쪽을 가리킨다. 여러 장비나 조명이 세워져있고, 사람들이 모여있는 곳이다.) 네가 촬영하겠다고 뛰어드는 건 안 되지만 구경하는 건 괜찮아.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 03:48</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(가리킨 쪽을 바라본다. 네 손을 잡고 그쪽으로 걸음을 옮긴다. 촬영장에 온 건 처음이라, 모든 게 마냥 신기해서 주변을 둘러본다) ……신기하네요. (스태프들이 촬영에 대해 논의하는 것을 엿듣고, 조명 세팅하는 것을 바라본다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 04:03</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(손을 잡고 있으면, 모든 시선이 이쪽을 한 번씩 향했다가 간다. 마침 메이크업을 마치고 나온 팀원 하나가 냅다 자신에게 돌진해 헤드락을 걸며 친한척을 해온다.) 아, 미친…. 안 놔? 안 놓냐? (성질 한 번 부리고 나면 네 눈치를 본 건지, 꽤 순순히 떨어진다. 숨막히는 3자대면.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 04:08</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……(그 모습을 보곤, 순간적으로 상대를 공격하려고 했다. 그러다 제 눈치를 보거든, ‘아’ 하고 깨닫는 게 있더라.) ……친…한 사이? (네 옆에 서서 소곤거린다. 유니폼, 얼굴 등을 스캔한다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 04:29</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">안 친해. 지금 누가 누구랑 친하다는 거야? (괜히 네게 성질 한 번을 부렸다. 팀원은 맞잡고 있는 손이나 붙어있는 몸, 따위를 보더니 오~ 하는 감탄사를 뱉으며 음흉한 미소를 짓곤 빠져주겠다 따위의 말을 하고 사라진다. 이마를 짚었다.) 아, 짜증나…. 이래서 어디다 말하기 싫었던 건데. 존나 놀리잖아.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 04:31</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……그래요? 하긴, 친한 사이였으면 시현을 괴롭히지는 않았을 테니…. (표정이 조금씩 가라앉는다. 질투라기보다는, 네 ‘안 친하다.’라는 말에 적대심을 느끼는 것처럼. 요컨대 ‘감히 너를 건드려?’의 뉘앙스다. 그가 어떤 반응을 내보였건, 놀리는 건지 아닌지 분간 짓지 못한다) ……혼내줄까요?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 04:46</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">뭘 혼내…. 표정 풀어. (네 뺨이나 콕 찌른다.) 저렇게 보여도 쟤 없으면 우리 팀에 쓸만한 서폿 없어. 내가 할수도 없는 거니까. (지나가던 스태프가 10분 뒤에 촬영 들어간다는 안내를 한다. 촬영 부스 근처에 의자 두 개를 가져와 너를 앉히고 그 옆에 앉았다.) 종종 저래. 짜증은 나지만…. 언젠 네가 친하게 지내라더니? 쟤네랑 라포 쌓고, 놀러 다니고?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 04:52</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……(콕 찔리면, 가라앉은 표정도 어느덧 ‘평소처럼’ 돌아온다. 그러니까, 네게 익숙한 얼굴로) ……으,음. …몰랐어요…. 저는 안 친한데 괜히 시현을 공격한 줄 알고, 화낼 뻔했거든요. (멋쩍은지 제 목덜미를 쓴다) 그렇게 말하기는 했지만, 그 사람들 성격은 몰랐으니까요. ……이젠 조금 알 것 같기도 하면서도, 여전히. (눈을 데굴 굴리더니) 역시 사람을 많이 만나 봐야 하나. (알다시피 낯을 가리고, 사람과 친해지는 법을 잘 모른다. 부스 의자에 앉은 채 제 얼굴을 괜히 한 번 쓸었다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 04:59</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">적어도 이 유니폼 입고 있는 놈들 중에서는 나한테 나쁜짓 할 놈은 없어. ……아마. (뒤따라 덧붙는 말은 괜한 불확신이다.) 낯은 안 가릴 자신은 있고? (네 머리를 살살 쓰다듬었다. 남들이 보기에는 한참 낯선 모습일 터다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 05:15</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그렇다면야. (네 유니폼을 보고, 다른 사람들의 착장을 살핀다. 유니폼을 입은 사람들이 몇 보인다) ……자신 없지만, 그래도. ……계속 매번 사람을 잘 몰라서 헤매는 것보단 낫지 않을까, 싶어서요. (쓰다듬음을 받으면 네 쪽으로 몸을 기울이고 네 머리에 제 머리를 기댄다. 너는 아니겠지만, 그는 이 촬영장에서도 스킨십에 스스럼없다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 05:36</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(시선이 느껴지면 자연스럽게 몸이 뻣뻣하게 굳는다. 단숨에 어색해하며 너를 살짝 떼어냈다.) …네가 하고 싶으면 그렇게 하는 거지. 나쁜 물만 들지 마. 너는 쓸데없는 걸 너무 잘 배워버리니까.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 05:48</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(떼어내면 고개를 갸우뚱, 기울인다. 분위기 파악을 하지 못하는 건 여전해서) ……이상한 거 안 배울 거예요. 그냥, 음, 분위기 읽는 거나 배워야죠. (그건 당장 필요한 것 같다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 06:42</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">남의 말 함부로 배우지 말고, 따라하지 말고. 좋은 거 나쁜 거 구분하고. 모르겠으면 나한테 물어보고. (말하다보면 걱정인지 잔소린지 모를 것들이 이어진다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 06:44</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……(끄덕, 끄덕, 끄덕. 네 말이 끝날 때마다 고개를 끄덕인다) 지금은, 조금 알 것 같아요. 사람들이 시현에게 엄청 관심이 많다는 거? 맞죠?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 06:48</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그건 당연한 거고. (그렇게 뭔가 더 말을 이으려고 하면 촬영 시작한다는 말에 기다리고 있어. 하고 너만 두고 곧장 향했다. 둥글게 모여 컨셉부터 듣고, 아니 무슨 프로필 촬영하는데 그런 컨셉이 필요하냐는 불평을 자연스레 덧붙이면서도 단체컷부터 착실하게 찍어나간다. 친해보여야하니 스킨십도 잦고, 실제로 투닥거리면서 찍는게 꽤 친해보일지도.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 06:51</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(그런 모습을 멍하니 바라보고 있으면, 괜히. …… 옹졸한 마음에, 질투심이 난다. 하지만, 촬영을 방해하고 싶진 않으니까. 그것을 그저 바라보면서 기다리는 게 그가 할 수 있는 전부겠지. 괜히 옆 사람을 흘겨본다. 다들 촬영에 집중하는 것 같다. ……동떨어진 기분.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 06:58</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(촬영을 하는 동안에는 그쪽에 신경을 쓰지 못해서. 너를 무시하는 게 아니라 집중해서 빨리 끝내고 빨리 너와 함께 돌아가려고. 요구를 빼지도 않고 원하는대로 다 들어주며 촬영을 이어간다. 한참 그렇게 단체컷 촬영이 끝나고, 살펴보고, 메이크업이나 헤어를 수정하고, 개인 촬영까지 하고 나면 꽤 오랜 시간이 지났다. 여태 혼자 있었을 네게 곧장 달려간다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 07:01</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(멍하니 그것을 바라볼 뿐이다. 어느덧 생각도 흩어지고, 시야도 흐릿해질 때쯤. 네가 제게로 온다. 멍한 얼굴로 한참 널 바라보다가) ……시현? (끔뻑, 눈을 느리게 깜빡인다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 07:06</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(올려보는 네 머리를 살살 쓰다듬어준다. 어느덧 몇 번의 스타일이 바껴 지금은 가벼운 후드집업에 펌이 있는 머리가 되었다.) 뭘 그렇게 보길래 놀라.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 07:07</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……아니, 아니에요. 그냥… 다른 생각 좀 하느라. ……끝났어요? (희미하게 웃는다. 분명 추악한 마음이 들었지만, 네 얼굴을 보니 어느새 그것들은 조금씩 옅어져만 간다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 07:09</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">어, 대충. 확인하고, 미팅 한 번 더 하고. 먼저 간다고 했으니까 금방 끝나. (무슨 생각을 그렇게 했느냐며 심심했을 너를 달래듯 다정하게도 쓰다듬는다. 저 멀리서 자신을 향해 놀리는 듯한 말이 들려오는 건 애써 무시했다.) 조금만 더 기다릴 수 있지?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 07:10</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……생각보다 오래 걸리네요. (쓰다듬는 손길에는 여전히 희미한 미소를 남길 뿐이다) 별 생각 아니었어요. 그냥, ……좋아 보여서. 시현이 사랑받고 있구나, 느껴져서. (그러다가 마지막 말에는 옅게 고개를 주억인다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 07:13</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">야, 네가 그러고 있으면 나도 기운 없어지잖아. (주위 눈치를 한 번 보는가 하더니 에라 모르겠다 싶은 심경으로 네 양 뺨을 쥐었다. 자신을 단단히 올려보게 하고 그 시선을 마주했다.) …외로워서? 심심해서? 아니면, 질투났냐?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 07:16</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(끔뻑, 바보 같은 얼굴로 너를 올려다본다.) ……음, 전부? 그냥. 시현이 사람들이랑 잘 지내길 바랐던 건 맞는데, 막상 정말 잘 지내는 것 같으니까. …마음이 좋으면서도, 조금. …질투 나서. 저도 시현 옆에 있고 싶어서. (유치한 마음이라는 걸 알기에 얼굴이 옅게 붉어진다) 그리고 다들 시현에게 집중하니까, 동떨어진 기분이라. (그렇다고 자신에게 관심을 달란 의미는 아니다. 네게 너무 많은 시선이 몰려있다는 게 새삼 실감 났을 뿐)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 07:18</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(문득 그런 말을 하는 네게 입맞추고 싶어져서, 가만히 내려보며 엄지로 네 아랫입술이나 문질렀다.) ……. 외로우면, 다음부턴 그냥 안 데려오는 게 나을 것 같아? (저도 모르게 그 입술 새로 엄지를 밀어넣었다가 놀라서 떼낸다.) ……조금만 기다려봐. 금방 끝내고 올게.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 07:24</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……그래도 시현과 조금이라도 떨어지면, 그건 그것대로 더 외로울 것 같아요. (네 손길을 얌전히 받는다. 손이 떼어지면 아쉽다는 듯 그 손에 시선이 떨어지질 않는다) ……네. 얌전히 기다리고 있을게요. …너무 늦지만 말고. 그렇다고, 대충 하지도 말고. 그 중간.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 07:29</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">금방 올 거야. (말하고는 곧장 뛰듯이 걸어가 다시 합류했다. 빠르게 끝내고 네게 돌아갈 수 있도록 일에 집중한다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 07:30</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(네가 없는 동안에는, 아까 대기실 앞에서 그랬던 것처럼 얌전히 기다린다. 다른 선수들의 개인 촬영을 구경하고, 움직이는 스태프들을 바라보고. 그러다 누군가가 종이컵에 커피 한 잔을 내어주면 그건 감사히 받으며 마시며 구경한다. ……시현은, 이런 삶을 살았구나….)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 07:34</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(집중해서 촬영을 끝내고, 메이크업을 지우지도 않고 곧장 네게 온다. 어차피 남성용 프로필사진 메이크업은 피부 커버가 고작인 수준이니 딱히 문제가 되진 않았을테다. 네 손을 잡고 인사만 대충 마친 채 곧장 촬영장을 빠져나간다.) 가자, 빨리.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 07:38</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(네 손을 잡고, 뛰어나간다. 빨리라는 말에 오늘따라 왜 이렇게 가슴이 뛰는지. 알 수 없다. 네 손을 잡은 채 뛰어가며 웃는다) ……길었네요.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 08:09</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(한참 그렇게 데려가 인적 드문 골목에 다다라서야 멈춰섰다. 너를 올려본다.) 심심하면 말을 하지. 일부러 쉬지도 않고 한 건데.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 08:16</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">심심한 건 아니었어요. 기다리는 건 자신 있으니까, 다만. ……괜히 동떨어져있다는 기분이 들어서. (피식 웃는다. 이젠 괜찮다는 듯, 그제야 너를 마음 놓고 끌어안는다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 08:20</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">뭐가. 누가 너 왕따 시켰냐? ……내가? (품에 안겨 올려본다. 네 품에 얼굴을 부비거나 하진 못했다. 얼굴의 분진이 잔뜩 묻어나 네가 더러워질까봐.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 08:29</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……아니, 그건 아닌데. 그냥. …다들 바쁜데 말 걸기도 뭣하고. (와중에 네 말이 생각나서 말을 걸어볼 생각이었나 보다) ……바빠 보이고, 내가 모르는 세상에 뚝 떨어진 기분이었어요.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 08:38</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">너는 처음 보는 세상일테니까 당연하지. …그래도 같이 있다보면 너도 자주 보는 세계가 될 걸. 아직 우리는 모르는 세상이 많잖아. (대신해서 너를 끌어당겨 안는다. 등을 가만히 도닥였다.) ……그래도 빨리 오려고 노력했는데, 조금만 봐줘.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 08:41</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(자신도 모르게 웃어버리곤 마주 끌어안는다) 그럼요. 원망은 하지 않는걸요. ……그냥 새삼스럽게 제 마음들이, 이 감정들이. 너무나 치사하고 옹졸해서, 괜스레. ……싫어졌을 뿐이지. (작게 웃어버린다) 익숙해져야죠. 그렇다고 제가 시현을 안 따라가면, 그건 그것대로. ……외로울 것 같아서.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 08:55</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그냥 참지 말고 너 신경 써달라고 해. 남들이랑 너무 친하게 있지 말라고 하고, 걔네랑 놀다가도 너랑 놀아달라고 해. 난 네가 그랬으면 좋겠다고. 자꾸 참기만 하지 말고. 안 하기로 안 했었냐? (입술을 조금 불퉁하게 비죽였다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 08:56</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……하지만, 시현. 일하는 중이잖아요. 저는 또 그걸 방해하고 싶지 않아서요. 전 그저 구경하러 온 사람일 뿐이고, 구경하는 사람 주제에 괜한 감정을 느꼈을 뿐이고. 그래서. ……(입을 꾹 다물었다) 그래도 지금 말하니까 봐줘요….</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 09:03</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">구경하러 온 사람이 아니라 내 손님, ……애인으로 왔고. 너 와도 된다고 위에서 허락했으니까 그래도 상관없어. 애초에, 네가 쉬엄쉬엄 하라고 말했으면 다른 사람들도 나 때문에 쫓기듯이 일 안 했어도 됐을걸.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 09:06</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(조금은 위안이 되지만, 역시 걱정이 많다. 생각이 많은 사람은 땅굴을 파기 마련이니까) ……조급하게 처리했다니까, 또 마음에 걸리네요. (눈을 데굴 굴리더니) 이런 생각, 그만해야겠어요. (피식, 허탈하게 웃어버린다. 너를 그저 꽉 끌어안은 채로) 가요. 재료 사야 하니까.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 09:11</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">잠깐만. (골목에서 나가기 전 너를 잡아 붙든다. 그리곤 뒤꿈치를 들어 네 양뺨을 쥔 채 입술을 꾹 눌렀다 뗐다. 그만큼 자신 또한 눈을 질끈 감았다 뜬다.) ………아까, 하고 싶어서 뒤지는 줄. (고개를 푹 숙이고 말하는 귀가 터질듯 붉다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 09:14</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(그 일련의 행동, 그 말 하나. 그것에 모든 것에 방금 느낀 감정들은 눈 녹듯 사라진다. 괜히 아쉽다. 다시 한번 더, 네게 입맞춤하고 아쉬운 마음을 담아 아랫입술을 잘게 깨문다) ……저도요. (마찬가지로 얼굴이 붉다. 작게 웃어버린다) 사람들 앞에선, 못하는 거죠? (그제야 깨달은 것처럼)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 09:17</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……해도 되기야 하겠지만, 좀…. ……쪽팔리잖아. (웅얼거린다. 떨어지는 너를 쫓아 또 한 번 입맞췄다. 네 가슴팍의 옷자락만 간절히 꾹 쥔다.) 남들 앞에서 그러는 거…….</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 09:18</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……(네 말에 머리를 살살 쓰다듬는다. 왜, 이 스킨십은 해도 해도 아쉬움만 남을까) ……왜 부끄러워요? 난 하나도 안 부끄러운데.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 09:21</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……누구 앞에서 그런 감정을 보이는 것 자체가 너무 민망해. 다 나를 놀릴 것 같고, 아까도 진짜 놀렸고…. (웅얼거리며 네 손이나 꾹 쥔다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 09:23</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……부끄럼쟁이. 놀리는 사람들이 잘못된 거죠. 오히려 당당해져요. “날 이만큼이나 사랑하는 사람이 있다”라고, 자랑해도 좋을 것 같은데.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 09:24</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……그건 네가 굳이 입맞추지 않아도 다 알던데…. (아까 들었던 그 무수한 놀림거리들을 떠올리니 또 괜스레 민망해진다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 09:25</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(부끄러운 모습마저 어쩜 이렇게 좋은지, 네게 손을 뻗어 네 뺨을 손으로 쓸었다. 붉어진 얼굴이 마냥 좋아서) …제가 혼내줄까요? 놀리지 말라고? (농담 섞인 말을 한다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 09:28</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">됐다니까……. (그 뺨에 얼굴을 얌전히 기댄다.) ……나더러 네가 나 진짜 좋아하는 것 같아 보인다더라. 행복하게 오래 만나라던데….</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 09:30</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……(새삼스럽게, 너는 사랑을 많이 받는구나, 싶다. 본인만 모르던 게 아니었을까. 하긴, 세상과 단절한 채 살아왔으니, 주변을 훑어볼 여력이 없었겠지) …좋은 말을, 해주었네요. ……시현, 주변 사람들에게 애정을 많이 받는 것 같아요. (이건 질투 하나 섞이지 않은 말이다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 09:34</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그냥 누구한테나 하는 인사치레 같은 말인 거잖아. (마지막으로 당겨 입맞추고 그제야 놓아준다.) 그리고 막, 네가 너무 무섭게 봐서 장난도 못 치겠다더라….</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 09:36</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……아. (확실히, 노모스는 그런 인상이다. 말 걸기 어려운 인상, 표정이나 인상 따위가 어둡기 짝이 없어서) …그래도, 그런 관심을 주는 것만으로도 충분히 애정 받고 있다고 봐서. 제가 괜한 걱정을 했구나, 싶어요.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 09:42</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">무슨 걱정? (손을 잡고 다시금 골목을 빠져나간다. 자연스레 상가 거리로 걷는다. 촬영하던 옷을 그대로 입고 나온 탓에 얼굴을 가릴만한 후드는 없으나 네 손을 놓지는 않았다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 09:45</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">다른 사람들이랑 잘 못 어울리는 거 아닌가, 그런 걱정이요. …근데 자세히 보니까 그건 또 아니라 안심이 되네요. (네 손을 잡은 채 거리를 걷는다. 벌써 하루가 이렇게 지났나, 늦은 오후다. 곧 해가 지려나….) ……하루가 참, 길면서도 짧죠?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 09:48</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">…나를 얼마나 걱정하는지는 알겠다. (고개를 젓고 웃어버린다.) 얼마나 사회성 없는 새끼라고 생각하는지도 알겠고. (잡은 손을 앞뒤로 조금씩 흔들었다.) 그러게. …그래도, 나는 좋아. 너랑 있어서…….</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 09:51</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">실제로 시현은……. 처음 봤을 때부터 사람들과 벽을 치고 지냈잖아요. 그래서, 당연히 다른 사람들에게도 그러는 줄 알고. ……욕하려고 한 말 아니에요. (괜한 변명 한 마디 툭 뱉고는) ……그리고, 저도요. 이렇게까지 누군가를 좋아하게 된 건 처음이라, 모든 게 즐겁고, 사소한 것에 감정이 흔들리고. 그래서 낯서네요.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 09:58</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그건 너도 마찬가지거든. 그리고, 나는 걔네한테도 벽 치고 지내. 그 때 뿐만이 아니라, 그냥 매번. (어깨나 으쓱이고 말았다.) 뭐뭐 사야하는지는 아냐? 난 따로 안 알아봤는데.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 09:59</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(이번엔 친해 보이던데, …그리고, 하긴. 내가 할 말은 아니긴 하다. 사람과 동떨어져 지낸 지가 오래돼서) 음, 밀가루 종류들이랑, 생크림, 버터…. 등등, 많이 외워두었어요. 어차피 두고두고 만들어 먹을 거, 한 번 올 때 많이 사두어야겠죠.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 10:01</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그럼 베이킹 책도 사갈까? 인터넷이나 유튜브 보면 나오겠지만, 너는 책을 더 좋아하는 것 같아서.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 10:09</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(끄덕, 고개를 주억인다) 아직 핸드폰 사용이 미숙해서요. 기왕 사는 거 다른 요리책도 더 사면 안 돼요? 시현에게 다양한 음식을 대접하고 싶으니까.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 10:17</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그럼 그냥 휴대폰에 더 익숙해지는게 나은 거 아닌가? (잘 모르겠다. 네가 그렇다면 그런 거겠지.) 서점 먼저 갈까, 그럼.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 10:19</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그래도 책이 좀 더 편해서요, 익숙해져 보려고는 하는데. ……버릇이라는 게 쉽게 고쳐지지 않더라고요. (이내 고개를 끄덕인다) 어차피, 아직 시간 많잖아요. 아는 서점 있어요?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 10:21</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">아는 서점은 없고, 보통 난 인터넷으로 시켜서. 서점이 거기서 거기겠지 뭐. (지도 앱을 켜서 찾아가려다 말았다. 그저 눈에 보이는 곳에 들어가도 괜찮겠다 싶어져서.) 책은 무거우니까, 장 보고 집 오는 길에 가서 사자.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 10:24</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(그저 발이 가는 대로 가는 것도 나쁘지 않은 선택일 테지, 네 손을 잡은 채 상점가를 둘러본다. 조용한 동네인 만큼, 떠들썩하지 않은 게 마음에 든다. 아직은 낯선 타지의 향이다) …아까도 생각했던 건데, 제가 시현의 일상에 들어온 것만 같아요.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 10:27</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">아까도 말했지만, 네가 내 일상에 들어온 게 아니라. 이게 '우리'의 일상이 된 거라니까. 나는 그런 표현이 더 좋아. (느리게 걷다보면 어느덧 어제 들렀던 그 마트 앞이다. 익숙하게 들어가 카트를 네 손에 쥐여준다.) 너는 어떨지 모르겠지만.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 10:31</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(그 말을 들으면 웃음을 터트린다) ……그렇네요, 이젠. … ‘우리’의 일상이지. (카트를 자연스럽게 잡는다. 무거웠던 얼굴도 어느새 한결 편한 얼굴이 되었다) 아직 그 표현에 익숙해지려면 시간이 필요할 것 같아요. 하루이틀 만에 적응할 수 있는 게 아니니.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 10:35</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">느려도 돼. 물론 이제 19년 하고 10개월 고작 남았겠지만. (어깨나 툭 맞댔다가 떨어졌다. 가루들이 있는 쪽으로 향한다. 조금은 장난스러운 말이었다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 10:42</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……(그 말을 들으면, 괜히 축 처졌다가도. 빙글 웃는다) …19년….</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 10:48</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……그런 말 하지 말까? (힐끗 눈치를 본다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 10:49</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">아뇨, 괜찮아요. ……사실인걸. (대수롭지 않다는 듯 카트를 끌며, 필요한 재료를 담는다. 도리어 ‘아무 일 없다’라는 듯 군다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 10:50</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……야. (힐끗 본다.) 삐졌어?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 11:24</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(힐끗, 흘겨보더니 웃는다. 대수롭지 않은 얼굴로) 그럴 리가요. (버터는 성분까지 따져가며 고른다, 이게 좋겠네.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 11:25</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……너 삐졌지. (팔뚝을 콕 찌른다. 말랑하진 않았지만.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 11:28</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……안 삐졌다니까요. 사실인데, 그걸 받아들인 것 뿐이고. (딱 봐도 삐졌다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 11:29</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">아닌데, 너 삐졌는데 지금. (슬쩍 팔짱을 껴본다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 11:38</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……(팔짱 끼는 모습에 힐끗, 흘겨보더니) ……자꾸 시현이 슬픈 말 해서, 좀 심통 나기는 했죠.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 11:42</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">너 속상하라고 한 말은 아닌데…. (어깨에 머리를 툭 기대고 올려본다.) 응?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 8월 31일 오후 11:47</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(네 그런 모습에는 약하다. 어차피, 크게 상심한 것도 아니었으니. 물론, 이건 노모스 본인의 생각이기는 하다) …다음부턴 그러지 말아요. 의도하지 않았더라도, 아프니까.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 02:58</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">미안, 안 그럴게. (세팅한 덕분에 복슬한 머리를 네 어깨에 부빈다.) 기분 풀어, 시온.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 09:04</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……(확실히, 그는 이런 것에 약하다. 그 말을 듣고는 피식 웃어버리더니) …다음부턴, 그러지 않는다고 약속.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 09:08</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">손가락이라도 걸까? (부러 더 불쌍한 낯을 하고 올려본다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 09:09</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……(가만히 그 얼굴을 내려다보다가 네게 새끼손가락을 내밀었다) 어기면, 진짜 삐질 거예요.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 09:10</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">조심할게. (손가락을 걸고 손을 끌어와 네 눈을 바로 마주한 채 손등에 가볍게 입맞춘다. 기분을 풀어주려는 저 나름대로의 필사의 노력이다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 09:15</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(기분은 네가 자신을 봤을 때부터 풀렸기에 너의 그 행동이 마냥 귀엽게만 느껴져서 작게 소리 내어 웃는다. 카트를 짚던 손을 잠시 뻗어 네 머리를 살살 쓰다듬고는) ……바보. 마저 장 보죠. 다음 사야 할 건 크림치즈인데. 대용량으로 사두면 여러모로 쓸 일이 많겠죠.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 09:17</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그런 거 다 소분해야하는 거 아닌가. 소분된 걸로 살까, 아예. (얌전히 쓰다듬을 받고 여전히 네 한쪽 팔에 팔짱을 낀 채 다닌다. 얼굴이 드러나있지만 알게 뭔가. 이미 어느 정도는 포기했다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 09:33</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그렇긴 해요. 소분되어 있는 걸로 사죠. (그렇게 베이킹에 필요한 재료들을 전부 고르고는) 됐어요. 이 정도면 충분할 것 같아요. 이제 계산하고, 서점에 들르죠. (하지만, 그는 이 상황이 자연스럽다. 네가 어떤 시선들을 감수하고 있는지 모르는 것 같다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 09:38</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(그래도 베이킹 재료만 산 거니 지난 번보다는 확실히 적나, 싶다.) 불편할 것 같으면 여기서 애초에 집으로 택배 보내자.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 09:47</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">이 정도는 들만한…… (잠깐 고민하더니) 한 손에 짐이 있으면, 시현 안는 데에 불편하니까. 이번 건 택배로 하죠.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 10:07</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……? 거리에서 날 안고 다니려고? (조금 흠칫,하며 한 걸음 물러났다. 싫다는 건 아니지만, 시선이 너무 많지 않나. 그래도 계산을 마친 것들은 당일 택배로 걸어둔다.) 길에선 그냥 손만 잡아….</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 10:09</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">왜요? 저는 시현 덥석덥석 안고 싶은데. (물러나는 모습을 바라보다가 괜히 손만 잡아본다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 10:11</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">조금, 조금은 천천히 하자. 아직은 길에서 안고 다닐 정도의…, ……그건 없어서. (손은 얌전히 잡혀준다. 마트를 빠져나가 다시 길을 따라 걸었다. 이 길의 어느 곳에는 서점이 있겠지, 하고.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 10:14</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">부끄럼쟁이. (한 마디 툭, 뱉고는 네 손을 잡은 채 주변을 둘러본다. 어느덧 하나둘 씩 간판과 가로등에 불이 들어오는 시간이 되었다) 그러면 집에서는 많이 안아도 되죠?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 10:20</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">집인데 뭐, 네가 하고 싶은대로 다 해도 돼. 거기서는. (잡은 손을 앞뒤로 살살 흔든다. 괜히 웃음이 날 것 같아 입꼬리를 내리려 부던히 애를 써야만 했다.) 아, 저기. 서점 있다. (길의 코너에, 작은 서점이 하나 있다. 아마 겉모습으로 보아서는 작게 운영하는 독립서점 같다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 10:24</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(힐끗 보더니 앞을 본다. ‘하고 싶은 대로….’ 작게 중얼거리다가 서점 안쪽으로 들어선다. 책들을 하나씩 살핀다. 규모가 작은 만큼, 다양한 요리책을 찾긴 어려웠지만 몇 가지 괜찮은 것들을 손에 쥔다. 그리고 다른 것들에도 시선이 가기 시작했다) …… 책을 또, 몇 개 살까요? 가끔 시간 빌 때 읽어두면 좋을 것 같아서.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 10:56</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">마음대로. (손을 잡고 있었으니 거리가 되는 한 책을 몇 권 둘러본다. 독서는 싫어하지 않았으니, 제 집에도 충분히 많은 책이긴 했다.) 집에 있는 것부터 다 읽고 사도 돼. 책 꽤 있거든.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 11:12</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그래요? 시현은 책이랑 안 친할 줄 알았는데, 의외네요. (그래도 한 손으로 한 권은 고른다. 소설 한 권이다) 이 정도면 됐어요. ………(잠깐 머뭇하더니) 매번 시현에게 결제를 맡기게 되니까, 미안하네요.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 11:14</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">어릴 때 집에서 혼자 할 수 있는게 게임이랑 독서밖에 없었어서. (덤덤하게 말했다. 이제는 그럴 수 있게 된 말이라서. 너를 올려본다.) 나는 너 쓰라고 돈 버는 건데. (당연하게 결제를 하고 책은 죄다 네 품에 들려준다.) 안 그러면 어디다 쓰냐?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 11:16</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(아무렇지 않게 말할 수 있는 걸 보면, 이젠 ‘그렇지 않다’라는 뜻도 될 테지. 네 과거는 여전히 아프지만, 당사자가 괜찮다고 하니) ……저도 언젠가 시현이 갖고 싶은 걸 사줄 거예요. 매번 받기만 하는 것 같아서.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 11:17</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">모자 사준다며. 난 그거면 될 걸. (지금 생각해보면 제 얼굴 가려지는걸 그리도 싫어하는 이가 용케 모자를 사주겠다고 했다. 조금 웃음이 났다. 집으로 향하는 걸음이 가볍다.) 많은 거 안 바라. 난 물욕은 없는 편이라.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 11:20</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그거 하나만으론 모자라요. 더 사줄 거예요. (집으로 향하는 길에도 네 손을 놓지 않은 채 천천히 걷는다. 눈을 가늘게 뜬 채) ……그렇다면, 물건 말고 다른 거. 제게 바라는 게 있나요?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 11:21</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">글쎄…. (너를 힐끔 올려보곤 다시 앞을 보며 걷는다.) …지금보다 더 많이 사…랑해 주는 거…?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 11:23</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(스치는 시선에 덩달아 널 바라보곤) ……그거야, 어렵지 않은 일이죠. 그렇게 할게요. (괜히 낯이 뜨겁다. 네 손을 잡은 채 눈을 굴린다) …시현도, 그렇게 해준다면.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 11:25</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">말하지만, 나는 항상 노력은 하고 있어. 네 성에 찰 지는 몰라도. (분명 제 걸음에 맞춰 걷는다면 느린 걸음일텐데, 얼마 되지 않아 아파트 단지 앞에 도착한다. 너와 함께 있으면 늘 시간이 빠르게 흘러가는 기분이라. 매순간이 아쉽다.) 누굴 이 정도로 좋아하는 것도 처음이라고.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 11:27</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그 마음, 잘 알죠. 누구보다 잘 아는 건 나뿐일 거라고 확신할 수 있는데. 그래도. …… 시현도 알겠지만, 사람 마음이라는 게 괜히, 더 확인받고 싶고. 더 욕심부리고 싶고. 그런 거잖아요. 그래서 이따금 이런 말을 하는 거니까. ……기다리고 있어요. 항상. (희미하게 웃는다. 가로등 빛 때문에 흐트러져 보일 수도 있겠지만)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 11:31</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(어느덧 사람들은 죄다 저녁을 먹으러, 혹은 귀가하러 들어갔을 시간이다. 가로등 빛을 등지고 자신을 보며 짓는 표정은 그림자에 가리워 제대로 보이지 않는다. 그런 모습을 가만 올려보다 뒤꿈치를 들어, 부러 뺨에 입맞추고 너를 당겼다.) 계속 기다려. 그러다 지치면 함부로 당겨도 돼. 내가 힘들다고 해도.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 11:40</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……(네 입술이 제게 닿으면, 널 한참 바라본다. 뺨으로는 아쉽다. 한 팔로 네 허리를 끌어안고 입술에 입을 맞춘다. 언젠가는 이 행위가 너무 두려웠다. 혹여나 네가 도망갈까, 조심스러웠다. 하지만 이젠 당연한 것이 되었고 이어진 것도… 두렵지 않다. 가로등을 뒤로 한 채 짤막이 키스하고 조금 떨어진다. 옅은 미소가 얼굴에 번지고….) …이렇게 당기면 되나요? (장난스러운 투로 웃으며 말했다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 11:45</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(촬영을 하고 꾸밈을 받은 덕분에, 오늘의 자신에게선 네게 낯선 향이 날 게 분명하다. 품에 안겼다 떨어지는 귓가가 잔뜩 붉어진건 가로등 빛에 가리워 제대로 보이지 않을지도 모른다. 여전히 호흡하는 타이밍을 모르니 흐트러진 숨을 정리하느라 잠시간 숙였던 고개를 든다.) …바보. (눈만 대록대록 굴리다 다시금 네 손을 잡아 끌었다.) ……가자, 눕고 싶어 이제.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 11:49</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(네 손을 잡고, 걸음을 옮긴다) 저녁은 안 먹고, 바로 눕게요? (익숙하지 않은 타지의 삶, 하지만 ‘조금은’ 익숙해진 것도 같다. 아직 한 걸음이겠지만)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 11:53</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……먹긴 먹어야지. (평소라면 안 먹고 바로 눕겠다고 했겠지만, …네가 자신을 위해 하는 요리일텐데 또 어떻게 거절하겠는가. 한 입이라도 먹어야지. 조금 막막한 것 같기도 하다.) ……먹고, ………씻고………. (그러니 자연스레 말이 느려진다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오전 11:58</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……(피곤한가, 오늘 저녁은 오래 걸리지 않고, 간단한 걸로 준비해야겠다. 마침, 어제 시제품 빵을 사두었으니, 그걸 구워주자. 그렇게 생각하며 널 받친다) 집 앞이에요. 조금만 참아요. ……안아줄까요?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오후 02:30</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그러다 내가 두 발로 걷지도 않겠다고 하면 어떡하려고 자꾸 그러냐. (괜히 잡은 손에 힘을 한 번 준다. 기다리면 도착하는 승강기에 올라탄다. 자신을 누르는 중력이 유난히 무겁다. 내일도 나갈 생각을 하니 벌써부터 눈앞이 캄캄해온다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오후 02:34</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">많이 피곤하면, 역시. 내일은 혼자 다녀와도 되니까…. (며칠 너를 바깥에 데리고 나갔던 것들이 떠올라서 괜스레 한 마디 한다. 걱정스러운 낯으로 널 바라보면서….)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오후 02:36</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">혼자 갈 수는 있고? 괜히 너 혼자 보내는 것보다 나도 같이 가는게 마음 편해.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오후 02:42</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">주소는 아니까, 그대로 가면 되고……. (오늘, 함께 있어도 외롭다고 한 녀석이, 이런 말을 하면 퍽이나 네 마음이 편하겠다. 꾸물거리더니) 그래도 시현에게 폐 끼치긴 싫은데. ….</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오후 02:43</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(폐? 하고 단어 하나를 걸고 넘어지려다, 열리는 문에 승강기에서 내리고 집 문을 열기 전 돌아본다.) 야, 이마 대.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오후 02:44</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……응? (눈을 한 번 깜빡이더니, 이마를 댔다. 절대 좋은 일은 아닐 것이라 직감하여 눈을 질끈 감았다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오후 02:45</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(이마에 가볍게 딱밤을 놓는다.) 삽질하면 이마 맞기로 했잖아.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오후 02:48</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(끙 앓는 소리를 내면서) 그렇다면, 시현은 피곤해도 같이 가주겠다는 거죠? 그쪽이 마음 편하고. ……그렇다면, 알았어요. 조금 늦게 가도 상관없으니까, 오늘은 일찍 자고, 푹 자도록 해요.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오후 02:50</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(제 손을 털어내고서야 비밀번호를 누르고 들어간다. 얼마 나와있던 것 같지도 않고 분명 아침까지 있었던 집인데 참 그리운 집이다. 당장 눕고 싶은 마음은 씻어야한다는 생각에 꾹 삼킨다.) 그렇게 할게. 그러니까, 일단 밥 하고. 씻고….</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오후 02:58</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">먼저 씻어요. 오늘 저녁은 가볍게 토스트 정도로만 먹을 생각이거든요. 시현 유달리 피곤해 보이기도 하고, 원래도 잘 안 먹기도 하고 하니. (귀가 후, 손을 씻고는 가볍게 세수만 마친다. 네가 다 씻고 나올 타이밍에 저녁을 내줄 생각이니까. 그 전에, 오늘 사 온 재료를 정리한다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오후 03:02</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그럼 넌 배 안 고프냐? (딱히 말리진 않는다. 제게는 그 편이 더 편할테니. 과하게 먹었다간 대화를 하다 말을 잇지도 못하고 까무룩 잠들어버릴 지도 모른다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오후 03:14</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">시현 자고 나면, 뭐라도 주워 먹죠. 뭐. ……자고 있을 때, 잠깐 떨어져 있는 건 괜찮죠? 어차피 집 밖으로 나가지 않을 텐데.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오후 03:21</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">말만 해두면 돼. 어디 나가더라도. (네 머리를 한 번 쓰다듬어주고 곧장 씻으러 향했다. 평소보다 씻는데 시간이 오래 걸린다. 화장을 지워야했고, 머리에 묻은 젤이나 그런 것들을 닦아내야 했기 때문에.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오후 03:22</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(그 사이 정돈도 마치고, 가볍게 토스트를 만들었다. 잠시 고민하더니, 네 것은 네 등분으로 나누고, 그중 두 조각만 준비한다. ……입맛도 없겠지, 싶어서 말이다. 식탁에 따뜻한 우유와 함께 올려두고, 네가 씻는 것이 오래걸릴 것 같으니, 자신도 씻고 나온다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오후 03:42</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(머리를 제대로 말리지도 않고 그저 수건만 둘러쓰고 나왔다. 비척비척, 걸어와 식탁에 털썩 앉아 네가 오길 멍하니 기다린다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오후 03:50</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(머리를 덜 말린 채로 나온다. 네 모습을 보면, 수건으로 머리를 좀 닦아내더니) 배 안 고프면 억지로 먹지 않아도 돼요.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오후 04:17</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그래도 네가 했잖아. 안 먹으면 서운해할 거면서. (고개를 젖혀 올려본다.) 아냐?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오후 04:19</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">…… (아니라고는 차마 말하지 못해서) 대신 조금만 내어주었어요. 이정도는 먹을 수 있죠? (두조각을 합치면, 식빵의 절반 크기다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오후 04:35</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(팔을 들 힘도 없어서 그냥 고개나 끄덕이고 입을 아 벌린다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 01일 오후 04:44</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">바보…. (그 모습을 보고는 네 입에 조각 하나를 넣어준다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오전 07:47</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">누가 누구더러 바보래. (그걸 또 한입 베어물어 두 번에 나눠 먹는다.) 바보는 너고.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오전 09:09</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">귀여워서 하는 말이죠. 피곤하고, 졸린데. ……제가 해준 음식은 또 먹어주려고 하는 모습이.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 01:20</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그럼 그냥 귀엽다고 하면 되잖아, 바보가 아니라. (자신 또한 네가 귀엽거나 좋을 땐 바보라고 하는 주제에.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 01:32</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">시현도 그러잖아요. 그냥, 직접적으로 말하긴 조금 부끄럽고. …… (다시 한 조각 찍고 네 입에 넣어준다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 01:40</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">아닌데. 나는 네가 진짜 바보같아서 바보라고 하는 건데. (또 한입만 받아먹더니 너도 먹으라고 손짓했다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 01:42</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">저 바보예요? (괜히 빤- 바라보면서 한입 먹는다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 01:43</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">너 바보지, 그럼. 바보 아니냐? (조금 식어버린 우유를 한모금 마신다. 다시 의자에 늘어졌다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 01:46</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……너무해. 바보랑 사느라 힘들겠네요. (진심이 아니라는 것을 알기에 그리 말하는 것이겠지. … 늘어지는 모습을 보고는, 먹던 것을 금방 비운다) 자기 전에 양치질 먼저, 알죠? 졸린다고 막 자면 안 되고. (자리에서 일어난다. 팔을 네 쪽으로 내밀었다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 01:50</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">너 진짜 나를 애로 보고 있는 거냐? 그 정도는 당연하잖아…. (그리고 당연하게 네게 손을 뻗어 안긴다.) 양치는 하고 잘 거야. 조금 있으면 잘 걸었다고 장하다고 하겠다, 아주.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 01:54</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">음, 조금은 그렇게 보이긴 해요. 지금은, 졸려서 거의 늘어진 수준이라. (그래서, 너를 들어 안고 욕실로 향한다) 아침에도 졸려서 샤워 빼고 모든 걸 제게 맡겼으니까.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 01:59</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">샤워는 어차피 밤에 하고 자는데 뭐…. (가만히 욕실에 서서 널 본다.) 그래서 양치도 또 시켜주려고?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 01:59</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">시현이 힘없으면? 해드릴까요, 아니면 자신의 힘으로 해볼래요. (장난스러운 투로 말했다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 02:02</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(괜히 널 한 번 흘겨보고 칫솔을 들었다. 스스로 양치를 한다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 02:03</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(그 모습에 작게 웃어버리고는) 자신의 힘으로 하고 계시니, 잘했다고 해드려야 하나….</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 02:04</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">………너한테서 독립해야겠다, 아무래도. 오늘 따로 자. (양칫물을 뱉고 입을 헹군다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 02:13</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……아, 그건 제가 싫은데. (그러더니 뒤에서 안는다. 한 발짝 늦게 자신도 양치하면서 말이다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 02:17</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">놔라. 잠도 내 힘으로 혼자 자야지. 그게 맞지 않겠냐?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 02:19</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(양치하는 중이라 답도 못하고, 그냥 한 팔로 꾹 안은 채 있을 뿐이다. 양치를 마치고 입을 헹군 뒤에나) 그건 제가 싫다니까요……. 장난인거 알면서, 시현 앞에서는 장난도 못치겠네요….</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 02:20</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">네가 그런걸 바라는 것 같아서, 아무래도. (그렇게 말하면서도 빠져나가려 하지 않고 네 품에 얌전히 안겨있기는 했다.) 나 애 아니거든?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 02:23</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">애 취급하는 건 아니고, 마냥 귀여워서 이러는 거죠. (널 내려다보다가 툭, 뺨을 손가락으로 찔렀다) 애정 표현인 거예요.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 02:59</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">나는 너한테, ……애 취급 받기 싫다고. (그렇게 말하고선 먼저 욕실을 빠져나간다. 달아오른 얼굴을 숨길 필요가 있어서.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 03:01</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……(그 모습에 뒤따라간다. 애 취급이 아니었는데, 그렇게 느껴졌나? …노모스는 다른 의미로 받아들여 버린 것 같지만)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 03:03</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……왜 따라와. 따로 잘 거라니까. (방문 앞에 서서 문고리만 잡고 돌아보지 않은 채 말했다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 03:04</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">진짜 따로 잘 거예요? 진짜…? 진짜? (시무룩한 낯으로 널 바라본다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 04:01</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……또 그럴 거야, 안 그럴 거야.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 04:02</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(귀여워서 그런 거였는데, 시무룩해지면서) ……안 그럴게요. 조금 더 직관적으로 귀여워할 테니까. (괜히 폭, 안아본다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 04:35</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">…남들 다 나를 애취급 해도, 너는 안 그랬으면 좋겠어. (얌전히 안겨서 그제야 방문을 열었다. 푹 숙인 고개는 들릴 줄을 모른다.) ……애새끼랑은 연애 안 할 거 아냐….</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 04:37</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(너를 안은 채로 머리를 쓰다듬는다) 예전에 했던 말인데, 저는 시현을 단 한 번도 어린아이 취급한 적 없는걸요. 지금도 그러하고. ……그리고, 만약에. 정말 ‘만에 하나’ 어리광을 부려서 어린아이처럼 보인다고 해도. 전 그런 시현도 좋아할 거예요. 연애하고 싶어할 거고.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 05:05</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">…애새끼랑 연애하고 싶어하는 건 변태새끼밖에 없거든? (괜히 그런 소리나 했다. 너를 살짝 밀어내고 곧장 침대로 가 누워 이불을 머리 끝까지 둘러 쓴다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 05:08</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그럼 변태새끼 할래요. (장난스런 웃음, 물론. 그는 말했듯 너를 어린아이 보듯 대하지 않지만. 네 옆에 누워서 머리 쪽을 살살 쓰다듬는다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 05:22</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">…변태새끼가 뭐가 좋다고 그런 걸 하겠다고 하냐.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 05:27</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그런 사람이 되더라도 시현과 연애할 수 있다면 상관 없어서요.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 05:29</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……나랑 연애한다고 세상이 다 너한테 손가락질 해도?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 05:32</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그럼요. 저는 그래도 여전히 시현을 사랑할 거예요. ……얼굴, 보여주면 안 돼요?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 05:33</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(눈만 빼꼼 내어 너를 본다.) ……매번 얼굴은 봐서 뭐하게. 이번에도 그냥 내 얼굴이 좋다고 할 거냐?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 05:38</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(네 얼굴을 보면 반사적으로 네 이마에 입맞춤 하고는) 늘 그랬듯, 시현 얼굴이 좋아요. 아니, 정확히는 시현의 얼굴 '도' 좋아하는 거지만.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 05:41</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">만약 그러면, 내가 아주 나쁜 사람이면? 그러니까…. '절망'의 초석이 나였으면? (네가 다가오면 반사적으로 눈을 감았다가 뜬다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 05:42</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">모든 것들은, 시현 앞에선 무용지물이 되는걸요. (부스스해진 네 머리카락을 손으로 정돈해준다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 05:48</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">거짓말. 그러면 더 힘들어했을 거면서. 시시때때로 나 죽이라고 하는 미친 칩 때문에. (얌전히 눈을 감고 네 손에 머리를 기댄다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 05:50</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">제가 고통스러워도, 감내하면 되죠. ……고통을 곱씹는 것 쯤은, 각오한 일이었으니.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 05:53</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">난 너 아픈거 싫은데. 그럴 바엔 그냥 죽이고 네가 편해지는게 낫지. (꽤 덤덤하게 말한다. 한 번 겪어봤다고 그런 건지.) 반대로 내가 너랑 있으면 매번 같은 고통을 느껴야한다고 했으면, 너도 비슷하게 말했을 거잖아.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 05:56</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(그 말을 들으면 잔잔한 미소에서 옅은 미소를 짓는다. 다만, 미묘하게 서늘한 낯으로…….) 이건 내 선택이기도 해요. 차라리 아프면서까지 시현을 사랑하겠다는 것, 말이에요.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 06:00</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">지금 죽겠다는 말 아냐. 내가 절망의 초석인 것도 아니고…. (그 낯을 보더니 뺨을 살살 문질러준다. 표정 풀어. 가볍게 덧붙이고.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 06:02</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">상상만으로도 싫은 상황이라. 지금도 충분히 괴로운데. (네 손길을 받으며, 눈을 느리게 감는다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 06:04</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">어떻게 해야 네가 너를 괴롭히지 않게 둘 수 있지. 나도 그만큼 아프면 되려나.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 06:08</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……머리에 있는 걸 뗀다면, 괜찮아질 거라고 생각해요. 아마도. …아마도. 이건 제가 감내해야할 일이니, 시현은. …… 이대로만 있어요.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 06:13</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(조금 떨어져 네 낯을 가만히 보다가 몸을 물린다.) 야, 나 힘든 거 있는데 너는 신경쓸 거 없거든? 그러니까 관심 꺼. (입을 꾹 다물었다.) 딱 이런 기분인데.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 06:14</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……시현에게, 걱정을 끼치고 싶지 않아서 이렇게 말한 건데. ……서운했어요? (내 고통을 주고싶지 않다, 어떻게 해결할 수 있는 부분도 아니니까)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 06:19</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">아니, 뭐…. 서운할 거 있냐? 그건 '네 일'이라는데.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 06:21</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(짧은 고민, 말에서 서운함이 묻어나는 건 착각일까) 그렇기는 하지만. …… (그러더니 몸을 돌려 천장을 바라본다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 07:14</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">너는 너고, 그건 네 일이고. (죄다 선을 긋는 말들이다. 딱 봐도 서운하고 상처받았다. 내 거라고 할 땐 언제고….)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 07:24</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(힐끗 흘겨보더니) …… 제 일이, 시현에겐 본인의 일로도 느껴지나요?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 07:36</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">아니? 딱히 아닌데? 그런 생각 없는데? (흥)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 07:38</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(피식 웃더니 너를 끌어 안는다) …… 제가 아픈 건 괜찮지만, 시현이 아픈 건 싫어서.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 07:51</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">어, 괜찮아. 나도 이제 아프거나 힘들어도 딱히 너한테 말 안 하면 되니까.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 07:52</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">………그건, 싫은데………. (괜히 꼬옥 안는다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 08:03</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">싫어도 뭐 어쩔건데. (너를 살짝 밀어낸다.) 그건 '내 일'인데.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 08:05</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">시현 일은 곧 제 일이기도 한데……. (그건 너도 마찬가지려나, 그런 생각이 스치면 울상이 된다. 그저 네가 제 몫의 고통을 생각하는 게 싫었을 뿐이라)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 08:11</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그게 왜 네 일이냐. 너는 아니라며? (평소라면 넘어갔을 그 표정에도 단호하게 말했다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 08:13</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……미안해요, 내가. 미안해요. (꾹 안은 채 비비적댄다) 너무 내 기준으로만 생각했어.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 08:29</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(그래도 기분이 영 풀리지 않는지 네쪽은 보지 않는다.) ……내 거니 뭐니 할 땐 언제고.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 08:34</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">내 거 이기에, 아픈 건 주고 싶지 않았으니까. 아프지 않은 것만 담아서 주고 싶어서…….</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 09:02</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그러니까, 그래서 나도 그렇게 해주겠다니까? 안 아픈 것만 주겠다고. 너한테. 아픈 건 하나도 안 알려주고. 비밀로 숨기고.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 09:15</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……시현의 몫은 가져가고 싶은데. (눈을 한 번 질끈 감았다) ……시현은 모든 게 '우리'의 일이길 바라는 거죠?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 09:47</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그렇게 너는 너, 나는 나. 나누면 어떻게 서로를 믿고 연애를 하냐? (입을 비죽인다.) 그냥 너, 랑 나. 로 있고 싶어? 아니잖아. 내가 아프고 힘들어 하는 건 다 네 몫으로 두고 싶다면서 왜 내 마음을 몰라.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 10:00</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(자신의 아픔은 주고 싶지 않다, 그러면서도 네 아픔은 가지고 가고 싶다. 배려로 보이는 이기심은 못내 네게 상처로 간 것을 왜 이제야 알았는지…. 시무룩하고, 울적한 얼굴이 이어진다. 딱히 네게 위로를 바라고 지은 건 아니지만. 짧은 침묵) ……미안해요. 그걸 몰라주어서. 제가 아프다고 한다면, 여전히 지끈거리는 걸 참고 살아간다고 고백해도. 괜찮나요, 시현이 해줄 수 있는 것이라곤 쓰다듬어주는 게 전부여도, 괜찮나요.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 10:42</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">안 괜찮을 게 뭔데. 나는 네가 그런 걸 말해주지 않는게 더 싫다고. (그제야 네 얼굴을 마주본다. 속상한 건 자신인데, 왜 네가 늘 더 상처받은 것 같은 표정을 짓는 건지. 뺨을 쓸고, 눈가를 쓸며 시선을 바로 보았다.) 내가 해줄 수 있는 건 아무것도 없어도. 적어도 마음 놓고 너를 걱정하는 건 할 수 있잖아.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 11:07</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(눈가를 쓸면 조금은 눈물이 나는 것도 같다. 네 눈을 바라보면서….) 알았어요. 그렇다면, 모든 걸 솔직하게 털어놓고, 아픔을 공유할게요. ……안아주기만 해도 돼요. 해결을 바라고 뱉는 말들이 아니니까. 걱정도……. (걱정은 마음을 무겁게 한다. 하지만, 조금 생각해 보니) ……많이 해주세요. (그렇게 하면, 더 사랑받는 기분이 들 것만 같아서)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 11:32</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">왜 우냐. 그 정도로 많이 아파? (눈가에 가볍게 입맞춘다. 너를 끌어안고 느리게 등을 도닥였다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 11:45</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">애써 말하지 않은 거지, 계속해서 오류를 출력하니까요. 알다시피 ‘그’는 제가 감정에 휩싸이는 것을 막으려 드는 존재잖아요. 감정에 휩쓸린다면, 사살하는 데에 큰 문제가 발생하니까. (물론, 이젠 더 이상 저격수 활동을 이어가지 않는다지만 노모스는 그런 사명을 쥐여진 채 ‘개조된’ 인간이니까)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 11:54</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……나를 좋아해서, 많이 힘들어?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 11:56</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……힘들지만, 그걸 감내하는 건 제 선택이죠. 그만큼 시현이 너무 좋으니까….</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 11:57</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">많이 힘들면, (잠시 입만 벙긋거리며 뱉어지는 소리가 없다.) ……너 그거 칩 빼고, 그 때 다시 만날까.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 11:58</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……싫어요. 말했잖아요. 이건 내 선택이라고. 한시라도 시현이랑 떨어지고 싶지 않으니까, 머리가 아프더라도 사랑하니까 계속 옆에 있는 거니까. 왜 그런 생각을 해요? (뚝, 눈물 방울이 떨어진다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 02일 오후 11:59</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">네가 아픈게 싫어서. (이마를 맞대고, 다시금 그 눈 위로 느리게 입을 맞춘다.) …힘들거면 그냥 같이 힘들자고. 완전히 괜찮아지고 만나도, ……되는 거잖아. 너도 덜 힘들고. 헤어지자는 것도 아닌데.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 12:00</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(뚱한 얼굴로 본다. 상처라도 받은 것처럼, 울적한 얼굴이다. 왜 우리는 서로에게 상처만 주게 되는 걸까) ……싫다니까요. 봐요, 내가 아픈 게 싫다고 했으면서 왜 나한테 알려달라 하는 거예요.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 12:02</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">…미안, 속상하게 해서. 싫으니까 알고 싶은 건데. 좋아하니까 알고 싶은 거고. (네 품을 파고 드는 대신, 자신이 조금 더 올라가 네 얼굴을 제 품에 가득 끌어안았다.) 아프게 하기 싫은 거고. 내가 있어서 더 아픈 것 같으니까 더 걱정하는 거고.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 12:06</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……시현 때문이 아니라는 거 알잖아요. 선생님이 날 이렇게 만들어버린 거고, 제어 당하는 거니까. …그러니까, 시현 잘못이라고 생각하지 말아 주세요…. 난, 시현 없으면 안 되는데 왜 잠시나마, 라도 떠나겠다고 말하는 거예요. 난 그것조차 싫은 사람인데. (네 옷자락을 꽉 거머쥔다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 12:09</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……그냥 그 한 달처럼만 지내면 되는 건데. 어차피, 또 한 달 아니냐? (차라리 네가 칩을 빼고, 그 모든 일이 끝난 후에 가겠다고 할 걸 그랬나. 뒤늦은 후회가 든다. 애처롭게 꽉 붙드는 손을 보며 너를 더욱 힘주어 끌어안고 등을 도닥였다.) 너는, 그렇게까지 힘들진 않았다며.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 12:11</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그땐, 시현을 그냥 ‘좋아했을’ 뿐이었고. 오늘 같은 날들을 기대했을 뿐이었고. 막상 시현과 이렇게 닿으니, 조금이라도 떨어지고 싶지 않게 됐어요. 떨어져 있었을 땐 이렇게까지 감정이 커지지 않았고. (널 안은 채로 그저 중얼거린다) 닿아보니 알겠더라고요, 내가 생각보다 당신을 너무 사랑한다는 걸. 그래서 더…구차해지는 거겠죠.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 12:14</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">막상 떨어져 지내보면…, (말을 삼킨다. 자신이 하려는건 너를 위한 말인지, 그저 네 말에 대한 반박인지 구분할 수 없게 되어서. 입을 다물었다. 한참 말이 없다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 12:16</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">난 정말 괜찮으니까, 아파도 되니까. 아픈 건 익숙하니까. ……방금했던 말, 없던 걸로 해주세요. 말실수 한 거라고. …네?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 12:16</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">아픈 게 익숙하다는 말이 제일 싫어. …그렇게 치면 나도 맞고 자라서 아픈 건 익숙하거든. 아파도 된다는 말도 싫고. ……아프면서 괜찮다는 말도 싫어. 다 내가 했던 말이라서, 더.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 12:19</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(그 말을 들으면 그저 네 옷자락만 애처롭게 잡으며 입을 꾹 다물었다) 그래서, 저. 두고 갈 거예요? 난 정말 괜찮은데… 그런 것보다 윤시현을 더 사랑해서 견뎌낼 수 있는 건데. ……이래서 내가 말하기 싫었던 거라고요. ………. (뚝, 뚝. 애써 참고 있었던 눈물이 물 새듯 터진다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 12:21</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">…두고 가는 게 아니라, 잠깐만 떨어져 있자는 건데. 연락하지 말자는 것도 아니고, 그냥. 몸만 조금 떨어져 있자고. 어차피 나도, 곧 아주 바빠지니까……. (아, 결국 울렸다. 울고 싶은 건 너 뿐만이 아닌데 제 울음은 속으로 삼킨다. 울음을 참는 건 익숙하다. 아플수록 소리내지 않아야 고통 또한 빨리 지나갔으니까.) …울보. 또 우네.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 12:25</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……그것도 싫어요, 시현 멀리 가는 거, 따라가겠다고 했잖아요. 수술 준비도 오래 걸리는 만큼, 헤어져야 하는 시간도 긴데. 내가 그걸 견뎌낼 자신이 없어요. (한 번 터진 것은 제어하기가 힘들다. 뚝, 뚝 연이어 떨어지는 눈물방울을 닦아내지도 못하고) 시현이 아픈 말 했잖아요.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 12:28</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">그러니까. 네가 수술하는 동안은 나는 너랑 같이 못 있을텐데. 그럼 차라리 내가 바쁜 동안 해버리는게 최대한 덜 떨어져있는 방향인 거잖아. 당장 내일 가라는 것도 아니고…. (제 손이 다 젖도록 네 낯을 닦아낸다.) ……아니면 언제 가려고.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 12:32</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(결국, 너는 결단을 내린 것 같다. 나는 네가 가장 빛나는 순간을 옆에서 보지 못하는구나. 고개를 들어 널 바라본다. 붉게 물든 눈가, 엉망이 되어버린 얼굴을 한 채로) ……마음대로 해요. (희미하게 웃는다. 이젠, 상관없다는 듯) 어차피 시현이 그런 생각을 한 순간부터, 그것을 정정하지 않는 순간부터. 내 매달림은 의미가 없었으니. 내일 처리하고, 곧장 수술 준비에 착수해야겠죠.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 12:37</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……그렇게 말하지 마. 왜 의미가 없어. 난, 그냥. (말을 삼킨다. 너만 상처를 받는 건 아니다. 자신 또한 네 말에 한없이 생채기가 나고 있었으니.) ……내일 가라고도 안 했어. 바쁠 때 시간 맞춰 다녀오면 효율적이지 않겠냐고 했지. …당장, 내일 가버리고 싶어?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 12:43</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">난 시현이 큰 무대에서 빛나는 모습을 보고 싶었다고요. 잔인한 이야기로 들리겠지만, 내가 수술할 때도 옆에 있어 주었으면 했고. (울음 섞인 목소리지만, 표정은 한없이 평온하다. 희미한 미소를 지은 채로) 모든 순간 ‘떨어지고 싶지 않아서’ 이러는 거라고요. 모르겠어요…? 그렇게 생각한 순간부터, 같이 있는 게 의미가 있나요. 효율을 따진다면. ……빠르게 처리하는 게 낫겠지.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 12:46</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">나는, 반짝 뜨고 질 태양이 아니고. …갔다가 오면 되잖아. 수술하고, 멀쩡해져서. 돌아와서 내가 그 무대에서 빛나는 모습을 보면 되지. ……나라고 너랑 떨어져있고 싶어서 그러는 것도 아니고. 나도, 네 생각보다, 훨씬 더, 너를. (좋아하는데. 눈을 감는다. 길게 뱉어내는 숨에 물기가 잔뜩 묻었다.) ……알겠어, 같이 있어. 미안해. 내가 잘못했어. (그런 말들이 평이하게 이어진다. 감정을 담았다간 주체하지 못할 것 같아서.) …근데 나는, 네 그 일정을 같이 가줄 자신은 없어. 제정신으로 못 있을 것 같거든.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 12:51</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……그래서 잔인한 이야기라고 덧붙였던 거고. …그냥, 눈을 뜨면 시현이 있었으면 좋겠고, 잠시 눈을 돌려도 시현이 있었으면 좋겠고. 한 시라도, 당신이 옆에 없으면 불안하고. ……그래서 그저 그걸 상상하는 것만으로도 숨이 막히는데. (네 뺨을 손으로 쓸었다. 다정함은 조금도 느껴지지 않는 차가운 손길이….) ……그렇다면, 어떻게 할까요. 시현 대회 일정에 맞추어서 잠깐 떠나는 것으로 할까요. (결국 나는 그 순간을 보지 못하겠구나, 눈을 뜨면 네가 없겠구나.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 12:55</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……내가 망가져도 좋으면, 같이 가줄게. 너한테 잔뜩 성질 부리고 예민하게 굴고 매일같이 잠도 제대로 못 자고 자꾸만 가슴이 욱신대겠지만. 그래도 괜찮으면. (네가 참으라면 참을 수 있는 범위다. 아마도. 그 과정에서 자신이 얼마나 마모되고 손상될 지는 모르겠지만.) …결승전에 올 수 있게, 그 일정 맞춰서 다녀오는건? 그마저도 싫으면, 그냥. …다 끝나고 가. 한 달 정도는 또 기다리지 뭐…….</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 12:59</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">내 욕심으로 시현이 망가진다면, 그건. (망설인다, 네 히스테릭 정도야 받아들일 수 있다고 여겼기 때문일까. 아니, 그 전에 추악한 욕망 때문이다. 이건 오로지 내 이기심에서 비롯된 것들이다. 사랑을 뒤집어쓴 집착을 네게 보이고 있지 않은가. 그것을 깨달을 때쯤이면) …대회에, 맞춰서 다녀올게요. (결국, ‘자신’으로서는 욕심을 버린 결단이다) ……말마따나 처음부터, 다 떼고 만날걸 그랬나. (손을 떼어낸다. 몸을 돌리고 다시금 천장을 바라본다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 01:02</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……안아줘. (네가 멀어지면 다급하게 너를 붙잡는다. 꼭 그래야만 하는 사람처럼, 불안하게. 자신이 너무 모질게 굴어서, 네가 더 이상 나를 사랑하지 않을까봐 그게 너무 무서워서.) ……내가, 나쁘게 말해서. 속상하게 해서. 이제 내가…, …싫어? (낯을 볼 수가 없다. 단호하게 떼어내던 손의 냉기가 머릿속에 깊게 박혔다.) ……따라갈게. 다 따라가고 그냥 너랑 있으면 되잖아. 내가 경기를 포기하고 나를 포기하는 한이 있어도. 그러면 되잖아. …나 싫어하지 마.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 01:07</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(그 말을 들으면, 결국 너를 끌어안는다. 조용히, 아무런 말도 하지 않고) 너무 좋아서 이러고 있는 거죠. ……내가 시현을 너무 사랑하다 못 해, 당신에게 몹쓸 짓까지 요구하고 있는 것만 봐도 보이잖아요. 내가 얼마나, 당신에게 집착을 내보이고 있는지. 모질게 말했다고도, 속상하게 했다고도 생각 안 해요. (혹은 ‘그렇게 생각하려고 노력하는 쪽’에 가까우려나) 안 싫어해요. ……오히려, 너무 사랑해서. 나를 감당할 수 없을 지경이니.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 01:10</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">나도 네가 좋아, …사랑해. 그래서 더 같이 있고 싶고, 네가 아프지 않았으면 하고. ……마음 놓고. 아무 걱정 없이, 나를, 사랑해줬으면 해서. …그렇게 시간 맞춰 가고. 서로가 서로에게 온전히 집중하지 못하는 시간을 그렇게 쓰는 것 외엔 아무 방도도 생각 안 나는데 어떡해…. (결국 참았던 울음이 터졌으나, 숨소리조차 내지 않았다. 울 적에 소리를 참는 건 오랜 습관이고 시현이 잘하는 것 중 하나다. 그래야만 했었어서.) …나는, 그것 외엔 아무 답도 모르겠는데.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 01:15</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(인간관계에 있어서 정답은 없다. 더 나은 방법, 차악의 방법을 택하는 것의 연속이지. 그게 감정이 얽히고설킨 것이라면 어떨까. 하물며 연인 사이라면 어떨까. 안은 품 사이로 우울함이 느껴지자, 반사적으로 네 눈물을 손으로 닦아준다. 남은 손으로는 머리를 쓸어주기도 하면서) ……그렇다면, 이렇게 해요. 내가 온전히 한눈팔지 않고, 아프지 않은 채로 당신을 사랑할 수 있을 때까지만. ………떨어져 있자고. (그렇게 떨어져 있는 것을 싫어하는 인간이, 이 말을 뱉는 게 참 오래 걸렸다. 결국 자신의 ‘집착’을 내려놓겠다는 의미이기도 하다) 하지만. 난 내일부터 바로 레버레이션에 등록한 후 떠날거예요. ‘빠르게’ 복귀하는 게 서로에게 좋은 거, 아닌가요.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 01:24</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……싫어, 가지 마. 당장 내일 가라고 한 건 아니라고 했잖아…. (원망스런 시선이 네게 닿았다. 당장에 자신을 떠나라고 한 적은 단 한 번도 없었고, 그저 시간을 맞춰 서로 바쁜 시간을 함께 쓰자고 했을 뿐인 건데. 너는 자신을 떠날 생각만 하는 것 같아서.) ……그렇게, 빨리. 나랑 떨어지고 싶어? …보기 싫어서? 내가 그렇게 원망스러워서? 그래서, ……그냥 가버릴 거야? 나는, 아직. 너랑 떨어질 준비가 안 됐는데….</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 01:30</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(그 말을 들으면, 망설인다. 그는 ‘어차피 떠나야 할 것’이라면…… 차라리 빠르게 정리하는 게 효율적 아닌가?. 이 대목에서 너에 대한 배려가 없게 느껴질 수도 있겠다.) 보기 싫어서 이러는 게 아니에요. ……빨리, 처리하고 시현을 오랫동안 보고 싶기도 하고. (그리고 다른 이유) ……그 간극을, 시현이 마음의 준비를 마칠 동안의 기간에 더 많은 정이 쌓여서 미련이 생겨버릴까 봐, 그래서 또 같이 가달라고 해버릴까 봐. 집착이…커질까 봐. 나를 막는 거지. (입을 잘게 떨더니) 시간을 더 주었으면 해요? ……(네가 바란다면,) 그렇게 할게요. 마음의 준비가 될 때까지 기다릴 테니.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 01:36</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">…차라리 집착해. 그 사이에, 내가 마음의 준비를 하는 동안 그냥 너랑 같이 가고 싶어지게 꼬시기라도 하든가. (한 번 난 눈물길을 따라 계속해서 눈물이 흘러내렸다. 아…, 피로가 단숨에 몰려온다. 안 그래도 고단했던 며칠이라.) 그러면, 나도. 마음이 바뀔 지도 모르잖아. ……나를 잔뜩 탐내주면 좋겠어. 내가 그냥 매순간 사랑받고 있다고 느낄 수 있게. 잔뜩 집착하고, 사랑하고, 욕심내달라고 했잖아. 내가 그걸 바랐는데…. (계속 그렇게 울다보면 머리가 어지럽다. 시야가 아득해져 잠시 눈을 감았다 뜬다.) 다 미워. 다 짜증나. 다… 속상하고. (그렇게 스트레스를 받을 적엔, 꼭 관통났던 심잠께가 아파와. 저도 모르게 숨을 참으며 움켜 쥐었다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 01:41</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(눈물을 여전히 닦아주면서, 널 가만히 바라본다. 그리고 이마에 입맞춤한다.. 아무렇지도 않게 했던 것이 오늘은 왜 이렇게 어렵게 느껴지는 걸까) 그러다가 망가지는 건 자신이 될 텐데, 그래도 괜찮아요? 시현이 망가져도 괜찮다면. ……기꺼이 망가트려 드리죠. (살짝 웃는다, 사랑이 엇나가기 시작했다. 네가 심장을 움켜쥐어도 대수롭지 않게 널 꽉 끌어안고) 사랑해요. 시현. ……마음의 준비가 될 때까지 기다릴게요. 적어도 대회 전까지는, 말해줄 수 있죠?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 01:47</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(답하지 못했다. 그저 헉, 하는 소리와 함께 숨을 삼키며 제 심장을 움켜쥐고 몸을 웅크릴 뿐이다.) …아파. (앓는 소리가 났다.) 아파! 아프다고! (결국 아이처럼 엉엉 소리내어 울어버린다. 그 때의 그 감각이 후유증이자 환상통이 되어 돌아와서. 왜 우리에겐 이런 일이 있어야하는지, 다시금 꿈 속으로 숨어버리고만 싶어져서. 그럼에도 달아날 수 없어서. 고통에 바르작대며 연신 울어댈 뿐이다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 01:55</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(아프다는 말에는 흠칫 놀란다. 안고 있던 것을 풀지는 않는다. 조용히 네 등을 다독일 뿐이다) 울지 마요. 시현, 괜찮아. …… 다 괜찮아질 테니까. ……울지 마. 아무 일도 없을 테니까. 괜찮아….</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 02:00</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">시온, 아파…. ……너무 아파. 아파서 또 죽어버릴 것 같아. 심잠에, 창이 찔려서, …자꾸, 피,가, 나는데……. (울음에 과호흡까지 와 숨을 헐떡이며 더듬더듬 말을 이어간다. 차라리 그 때 완전히 눈을 감았더라면 누군가를 사랑해서 알게되는 감정은 영영 모를 수 있지 않았을까. 누구를 또 걱정해서 드는 이 마음과 또 다른 모순들을 겪지 않아도 되지 않았을까. 그런 생각이 계속해서 들었다.) 가,지 마. 아프지도 마. 미안해, 내가 다 잘못했어. 흐으……. (눈물은 멎을 줄 모른다.) 그냥, 경기같은 거 안 나갈게….</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 02:12</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(그 말을 들으면, 네 가슴께를 손으로 얹는다. 환상통, 정신이 혼미해져 이젠 과거의 잔재에 묻혀버리고 만 너이구나. ……내가, 너를, 기어코 망가트린 건가. 널 망가트리겠다고 한 건 본인이지만, 이렇게나 빠르게 스러질 줄 누가 알았겠는가) 시현, 괜찮을 거라니까요. ……왜 벌써 아파해. 아직, 나는 네 옆에 있고. 너도 내 옆에 있는데. 뭐가 그렇게 무서워. ……응? (네 이마에 입을 연신 맞추다가) 할 건 해야죠, 난 나 때문에 시현의 일에 지장이 가지 않았으면 좋겠는데. …자, 차분히 호흡하고.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 02:17</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(느리게 너를 따라 호흡한다. 그런다고 흉통이 사라지진 않았지만. 베갯잎이 축축하다. 눈가나 얼굴이 새빨갛게 달아올라 있었다. 정말 한없이 운 것 같은 사람처럼.) …내가 괜한 말을 해서. 아……. ……그냥, 다 잊어버리고 싶어…. …시간을 돌려서, 그 말을 하기 전으로 가버리고 싶어. (고통에 더욱 웅크린 몸은 한없이 작다.) 윽….</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 02:23</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">고통을 공유해서, 얻는 게 이것이라면. ……차라리 공유하지 않았던 쪽이 나았을지도 모르지만. 당시엔 몰랐겠죠. 이렇게까지 틀어질 거라곤. (네 머리를 살살 쓰다듬는다) ……떠나지 않아요. 나 여기 있어요, 시현.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 06:15</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……다 잘못된 것 같아. (그렇게 한참 심호흡을 하다보면 조금은 안정되어가는 것도 같다.) …내가 그렇게 잘못된 말을 한 거야?</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 09:06</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……아뇨, 잘못된 말을 한 건 아니에요. 그냥 제 고통을 공유했을 뿐이지. ……제 일은 곧 시현의 일이고, 시현의 일은 곧 제 일이죠. ……그래서 말 안 하려고 했어요. 감당할 수 없다는 걸 아니까, 내 욕심. 내 갈망. 그런 것들이 얼마나 추악한지 아니까. ……아프지 마세요, 아파하지 마세요. 다 괜찮아질 거예요. 그러니, 오늘은 이만 자요. 안 그래도 며칠 피곤했을 텐데.</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 09:09</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(이렇게, 해결되는 것도 없이? 여전히 흐르는 눈물은 시야를 가린다. 역시 너를 좋아하는게, 네가 자신을 좋아하게 된 게 모두 잘못된 걸까. 그런 생각만이 들었다. 아무 말도 않고 눈만 감고 있는다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 09:14</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……사랑해, 사랑해요. 윤시현. (이마에 짧게 입을 맞춘다) 그저, 피곤해서 그런 거니까, 아침이 된다면. ‘우리는’ 평소와 같은 일상을 보내겠죠. 그러니까, 잘 자요. 다 괜찮아질 테니……. (괜찮아질 것이라는 말 뒤에, 회피가 섞여 있다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 09:17</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_06.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">(그 말을 끝으로 기절하듯 잠에 들었다. 며칠간의 농축된 피로가 단박에 몰려든 탓이다. 모든 것을 뒤로하고 캄캄한 수마에 빠져든다.)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 09:31</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_06.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">……(그는 잠을 자지 않았다. 잠이 오지 않는 밤이었기에, 눈을 가늘게 뜬 채 네 이마에 입을 연신 맞출 뿐이다)</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 03일 오전 09:36</div>
+  </div>
+    <script src="manifest.js"></script>
+  <script src="theme.js"></script>
+  </body>
+  </html>

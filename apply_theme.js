@@ -1,5 +1,5 @@
 /* 모든 로그 HTML에 컬러 콘솔을 붙이고, 아바타 목록을 만들어 냅니다.
- *   실행:  node apply_theme.js
+ *   실행:  .\apply_theme.ps1   (또는 node apply_theme.js — 한글 경로에선 Node가 크래시할 수 있음)
  *
  * 하는 일
  *   1. <html> 에 이 페이지가 쓰는 아바타 세대를 새깁니다 (data-gen-ghost="05" 등).
@@ -16,7 +16,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const ROOT = __dirname;
+const ROOT = process.env.MOST_ROOT || __dirname;
 const MARK = "most-theme-boot";
 
 const CHARACTERS = {
