@@ -344,7 +344,7 @@ window.MOST_MANIFEST = {
       "stamp": "2026년 8월 24일 오후 01:25",
       "account": "@NOMOS_ATA",
       "character": "nomos",
-      "speaker": "노모스",
+      "speaker": "윤시현",
       "avatar": "images/nomos_06.png",
       "text": "(네가 깨는 것을 기다린다. 이번에는 움직이지 않는다. 네가 눈을 뜨면 자신을 바로 볼 수 있게끔.)",
       "count": 518,
@@ -364,27 +364,12 @@ window.MOST_MANIFEST = {
       "character": "nomos",
       "speaker": "노모스",
       "avatar": "images/nomos_06.png",
-      "text": "(잠에 빠지고, 눈을 뜬다. 아직은 낯선 풍경, 그 사이에 있는 너. 너는 깨어 있을까)",
+      "text": "(잠에 빠지고, 눈을 뜬다. 아직은 낯선 풍경, 그 사이에 있는 너. 너는 깨어 있을까)<",
       "count": 286,
       "gens": {
         "ghost": "06",
         "nomos": "06"
       }
-    },
-    {
-      "file": "0831.html",
-      "month": 8,
-      "day": 31,
-      "part": null,
-      "label": "8월 31일",
-      "stamp": "2026년 8월 31일 오전 02:17",
-      "account": "@NOMOS_ATA",
-      "character": "",
-      "speaker": "노모스",
-      "avatar": "",
-      "text": "(언제 잠에 들었더라. 집에 있다는 안정감에 편안하게 잠에 빠졌지만, 눈을 뜨는 건 여느때 처럼 굉장히 이른 시간이다. 제 품에 잠든 너를 한참이고 바라보면서, 머리를 조심스럽게 쓸었다)",
-      "count": 287,
-      "gens": {}
     }
   ]
 };

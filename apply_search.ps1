@@ -6,7 +6,7 @@ Copy-Item "$root\index.html" "$root\..\index.html" -Force
 
 $files = @(
   "0704.html","0708.html","0712.html","0714.html","0728.html","0729.html","0731.html",
-  "0804.html","0809_01.html","0809_02.html","0813.html","0816.html","0820.html","0824.html","0828.html"
+  "0804.html","0809_01.html","0809_02.html","0813.html","0816.html","0820.html"
 )
 
 foreach ($name in $files) {
