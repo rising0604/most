@@ -2,10 +2,10 @@
 window.MOST_MANIFEST = {
   "characters": {
     "ghost": {
-      "label": "고스트 · 윤시현",
+      "label": "윤시현 · 고스트",
       "names": [
-        "고스트",
-        "윤시현"
+        "윤시현",
+        "고스트"
       ],
       "account": "@Ghost_ATA",
       "gens": [
@@ -93,11 +93,14 @@ window.MOST_MANIFEST = {
     "0828.html": {
       "ghost": "06",
       "nomos": "06"
-    }
-    ,
+    },
     "0831.html": {
       "ghost": "06",
       "nomos": "06"
+    },
+    "0903.html": {
+      "ghost": "06",
+      "nomos": "07"
     }
   },
   "logs": [
@@ -344,7 +347,7 @@ window.MOST_MANIFEST = {
       "stamp": "2026년 8월 24일 오후 01:25",
       "account": "@NOMOS_ATA",
       "character": "nomos",
-      "speaker": "윤시현",
+      "speaker": "노모스",
       "avatar": "images/nomos_06.png",
       "text": "(네가 깨는 것을 기다린다. 이번에는 움직이지 않는다. 네가 눈을 뜨면 자신을 바로 볼 수 있게끔.)",
       "count": 518,
@@ -387,6 +390,24 @@ window.MOST_MANIFEST = {
       "gens": {
         "ghost": "06",
         "nomos": "06"
+      }
+    },
+    {
+      "file": "0903.html",
+      "month": 9,
+      "day": 3,
+      "part": null,
+      "label": "9월 3일",
+      "stamp": "2026년 9월 03일 오전 09:42",
+      "account": "@NOMOS_ATA",
+      "character": "nomos",
+      "speaker": "노모스",
+      "avatar": "images/nomos_06.png",
+      "text": "(네가 깨어나기를 기다린다. 밤새 여러 생각을 거쳤다. 대부분 부정적인 것들이었지만, 네 머리를 살살 쓰다듬으며 깨어나기를 기다린다)",
+      "count": 636,
+      "gens": {
+        "ghost": "06",
+        "nomos": "07"
       }
     }
   ]

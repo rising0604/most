@@ -2,6 +2,8 @@
  *   실행:  .\apply_theme.ps1   (또는 node apply_theme.js — 한글 경로에선 Node가 크래시할 수 있음)
  *
  * 하는 일
+ *   0. 마스토돈에서 갓 뽑은 조각 파일(<div class="ttobot-status"> 목록만 있는)을
+ *      <!DOCTYPE>·<head>·<body> 뼈대로 감쌉니다. 이미 완성된 문서는 건드리지 않습니다.
  *   1. <html> 에 이 페이지가 쓰는 아바타 세대를 새깁니다 (data-gen-ghost="05" 등).
  *      → 부트 스니펫이 body 파싱 전에도 어떤 이미지를 갈아끼울지 알 수 있습니다.
  *   2. <head> 안, 스타일시트 링크 앞에 인라인 부트 스니펫을 넣습니다.
@@ -95,6 +97,44 @@ const files = fs
 if (!files.length) {
   console.error("HTML 파일을 찾지 못했습니다.");
   process.exit(1);
+}
+
+// ── 0) 조각 파일 감싸기 ──
+// 마스토돈 로그는 <div class="ttobot-status"> 목록뿐입니다. 뼈대가 없으면 여기서 씌웁니다.
+// "0903.html" → <title>9월 3일</title>,  "0809_01.html" → <title>8월 9일 (1편)</title>
+
+function pageTitle(name) {
+  const m = name.match(/^(\d{1,2})(\d{2})(?:_(\d+))?\.html$/);
+  if (!m) return name.replace(/\.html$/, "");
+  const base = `${+m[1]}월 ${+m[2]}일`;
+  return m[3] ? `${base} (${+m[3]}편)` : base;
+}
+
+for (const name of files) {
+  const file = path.join(ROOT, name);
+  const raw = fs.readFileSync(file, "utf8");
+  if (/<!doctype/i.test(raw) || /<html[\s>]/i.test(raw)) continue;
+
+  const eol = raw.includes("\r\n") ? "\r\n" : "\n";
+  const body = raw.replace(/^﻿/, "").replace(/^(?:\r?\n)+/, "").replace(/\s+$/, "");
+  const wrapped = [
+    `<!DOCTYPE html>`,
+    `<html lang="ko">`,
+    `<head>`,
+    `  <meta charset="UTF-8">`,
+    `  <meta name="viewport" content="width=device-width, initial-scale=1.0">`,
+    `  <title>${pageTitle(name)}</title>`,
+    `  <link rel="stylesheet" href="style/ttobot.css">`,
+    `</head>`,
+    `<body>`,
+    body,
+    `</body>`,
+    `</html>`,
+    ``,
+  ].join(eol);
+
+  fs.writeFileSync(file, wrapped, "utf8");
+  console.log(`  뼈대 생성: ${name}  <title>${pageTitle(name)}</title>`);
 }
 
 const pages = {};
