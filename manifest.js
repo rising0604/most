@@ -423,12 +423,15 @@ window.MOST_MANIFEST = {
       "label": "9월 7일",
       "stamp": "2026년 9월 07일 오후 12:40",
       "account": "@NOMOS_ATA",
-      "character": "",
+      "character": "nomos",
       "speaker": "노모스",
-      "avatar": "",
+      "avatar": "images/nomos_07.png",
       "text": "(부스스, 눈을 뜨면 아직 네가 내 몸 위에 있다. 깨어있을지는 글쎄?)",
       "count": 921,
-      "gens": {}
+      "gens": {
+        "ghost": "06",
+        "nomos": "07"
+      }
     }
   ]
 };
