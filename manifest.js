@@ -102,6 +102,10 @@ window.MOST_MANIFEST = {
     "0903.html": {
       "ghost": "06",
       "nomos": "07"
+    },
+    "0907.html": {
+      "ghost": "06",
+      "nomos": "07"
     }
   },
   "logs": [
@@ -403,13 +407,28 @@ window.MOST_MANIFEST = {
       "account": "@NOMOS_ATA",
       "character": "nomos",
       "speaker": "노모스",
-      "avatar": "images/nomos_06.png",
+      "avatar": "images/nomos_07.png",
       "text": "(네가 깨어나기를 기다린다. 밤새 여러 생각을 거쳤다. 대부분 부정적인 것들이었지만, 네 머리를 살살 쓰다듬으며 깨어나기를 기다린다)",
       "count": 636,
       "gens": {
         "ghost": "06",
         "nomos": "07"
       }
+    },
+    {
+      "file": "0907.html",
+      "month": 9,
+      "day": 7,
+      "part": null,
+      "label": "9월 7일",
+      "stamp": "2026년 9월 07일 오후 12:40",
+      "account": "@NOMOS_ATA",
+      "character": "",
+      "speaker": "노모스",
+      "avatar": "",
+      "text": "(부스스, 눈을 뜨면 아직 네가 내 몸 위에 있다. 깨어있을지는 글쎄?)",
+      "count": 921,
+      "gens": {}
     }
   ]
 };
