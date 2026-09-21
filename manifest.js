@@ -14,7 +14,8 @@ window.MOST_MANIFEST = {
         "03",
         "04",
         "05",
-        "06"
+        "06",
+        "07"
       ]
     },
     "nomos": {
@@ -30,7 +31,8 @@ window.MOST_MANIFEST = {
         "04",
         "05",
         "06",
-        "07"
+        "07",
+        "08"
       ]
     }
   },
@@ -449,12 +451,15 @@ window.MOST_MANIFEST = {
       "label": "9월 13일",
       "stamp": "2026년 9월 13일 오후 01:23",
       "account": "@Ghost_ATA",
-      "character": "",
+      "character": "ghost",
       "speaker": "윤시현",
-      "avatar": "",
+      "avatar": "images/ghost_07.png",
       "text": "(비몽사몽한 정신에 겨우 눈을 뜬다. 본능적으로 네 품을 파고 들어간다.)",
       "count": 983,
-      "gens": {}
+      "gens": {
+        "ghost": "07",
+        "nomos": "08"
+      }
     },
     {
       "file": "0918.html",
@@ -464,12 +469,15 @@ window.MOST_MANIFEST = {
       "label": "9월 18일",
       "stamp": "2026년 9월 18일 오전 09:34",
       "account": "@Ghost_ATA",
-      "character": "",
+      "character": "ghost",
       "speaker": "윤시현",
-      "avatar": "",
+      "avatar": "images/ghost_07.png",
       "text": "[집에 나 말고 다른 사람 오면 절대 문 열어주지 마][절대][열어주면 오늘 집 안 들어간다]",
       "count": 21,
-      "gens": {}
+      "gens": {
+        "ghost": "07",
+        "nomos": "08"
+      }
     }
   ]
 };
