@@ -106,6 +106,14 @@ window.MOST_MANIFEST = {
     "0907.html": {
       "ghost": "06",
       "nomos": "07"
+    },
+    "0913.html": {
+      "ghost": "07",
+      "nomos": "08"
+    },
+    "0918.html": {
+      "ghost": "07",
+      "nomos": "08"
     }
   },
   "logs": [
@@ -432,6 +440,36 @@ window.MOST_MANIFEST = {
         "ghost": "06",
         "nomos": "07"
       }
+    },
+    {
+      "file": "0913.html",
+      "month": 9,
+      "day": 13,
+      "part": null,
+      "label": "9월 13일",
+      "stamp": "2026년 9월 13일 오후 01:23",
+      "account": "@Ghost_ATA",
+      "character": "",
+      "speaker": "윤시현",
+      "avatar": "",
+      "text": "(비몽사몽한 정신에 겨우 눈을 뜬다. 본능적으로 네 품을 파고 들어간다.)",
+      "count": 983,
+      "gens": {}
+    },
+    {
+      "file": "0918.html",
+      "month": 9,
+      "day": 18,
+      "part": null,
+      "label": "9월 18일",
+      "stamp": "2026년 9월 18일 오전 09:34",
+      "account": "@Ghost_ATA",
+      "character": "",
+      "speaker": "윤시현",
+      "avatar": "",
+      "text": "[집에 나 말고 다른 사람 오면 절대 문 열어주지 마][절대][열어주면 오늘 집 안 들어간다]",
+      "count": 21,
+      "gens": {}
     }
   ]
 };

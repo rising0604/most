@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9월 18일</title>
+  <script id="most-theme-boot">
+    /* 저장된 테마와 아바타를 첫 페인트 전에 적용합니다. theme.js 가 나머지를 맡습니다. */
+    (function () {
+      var root = document.documentElement;
+      function readable(hex) {
+        var f = function (i) {
+          var v = parseInt(hex.substr(i, 2), 16) / 255;
+          return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+        };
+        var L = 0.2126 * f(1) + 0.7152 * f(3) + 0.0722 * f(5);
+        return 1.05 / (L + 0.05) >= (L + 0.05) / 0.0567 ? "#ffffff" : "#0d141d";
+      }
+      try {
+        var hash = (location.hash.match(/theme=([^&]+)/) || [])[1];
+        var raw = hash
+          ? atob(decodeURIComponent(hash))
+          : localStorage.getItem("most-theme") || "{}";
+        var state = JSON.parse(raw) || {};
+        var mode = state.mode || "auto";
+        if (mode === "auto") {
+          mode = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        root.setAttribute("data-theme", mode);
+        var custom = (state.custom || {})[mode] || {};
+        for (var key in custom) {
+          if (!/^#[0-9a-f]{6}$/i.test(custom[key])) continue;
+          root.style.setProperty("--accent-" + key, custom[key]);
+          if (key === "ghost" || key === "nomos") {
+            /* 말풍선 글자색 — 흰색과 짙은 잉크 중 대비가 큰 쪽 */
+            root.style.setProperty("--on-" + key, readable(custom[key]));
+          }
+        }
+      } catch (e) {
+        /* 저장이 막혀 있으면 CSS 기본 팔레트로 갑니다. */
+      }
+      try {
+        /* 이 페이지가 쓰는 세대만 골라 배경으로 덮어씁니다. */
+        var saved = JSON.parse(localStorage.getItem("most-avatars") || "{}");
+        var rules = "";
+        var accounts = { ghost: "@Ghost_ATA", nomos: "@NOMOS_ATA" };
+        for (var name in accounts) {
+          var gen = root.getAttribute("data-gen-" + name);
+          var url = gen && saved[name + ":" + gen];
+          if (!url || url.slice(0, 11) !== "data:image/") continue;
+          var at = '.ttobot-status[data-account="' + accounts[name] + '"] .ttobot-avatar';
+          rules += at + '{background-image:url("' + url + '");background-size:cover;background-position:center}';
+          rules += at + " img{visibility:hidden}";
+        }
+        if (rules) {
+          var style = document.createElement("style");
+          style.id = "most-avatar-style";
+          style.textContent = rules;
+          document.head.appendChild(style);
+        }
+      } catch (e) {
+        /* 아바타를 못 읽으면 원본 이미지가 그대로 보입니다. */
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="style/ttobot.css">
+</head>
+<body>
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_07.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">[집에 나 말고 다른 사람 오면 절대 문 열어주지 마][절대][열어주면 오늘 집 안 들어간다]</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 18일 오전 09:34</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_08.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">[응?][아얀 님이 오셨어요.][어…이미 열어줬는데………?][어떡해요? 🥺]</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 18일 오전 09:36</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_07.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">[ㅇㅇ 걔랑 놀아][오늘 안들어감][ㅅㄱ]</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 18일 오전 09:36</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_08.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">[아 왜요][아][왜요? ㅠㅠ]</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 18일 오전 09:39</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_07.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">[걔랑 놀라고][답장하지마라]</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 18일 오전 09:42</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_08.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">[시현 ㅠㅠ]</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 18일 오전 09:43</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_07.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">[저 아세요?]</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 18일 오전 09:47</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_08.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">[빨리 와요. 알았죠?][ㅠ]</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 18일 오전 09:49</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_07.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">[걔 잘 재우고 내일까지 잘 챙겨다 보내라 알겠냐?][안 들어간다는 거 농담 아님]</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 18일 오전 09:51</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_08.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">[그래요? 오늘 바빠요?]</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 18일 오전 09:53</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_07.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">[아니?][걔랑 잘~ 놀라고]</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 18일 오전 11:30</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_08.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">[아얀 님이 싫어요? 왜 도망가요.][같이 놀면 좋은데.]</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 18일 오전 11:53</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_07.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">[어 싫어!!!!]</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 18일 오전 11:56</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_08.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">[왜요?]</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 18일 오전 11:56</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_07.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">[음흉하잖아][거기 온 것도 너랑 나 구경하러 온 걸텐데][그러니까 오늘 둘이 놀고 내일 봐]</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 18일 오후 03:20</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_08.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">[시현도 오면 안 돼요?😢]</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 18일 오후 04:37</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_07.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">[왜?][둘이 노는게 더 재밌을걸]</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 18일 오후 04:38</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_08.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">[시현이랑 셋이 놀면 더 재미있을 테니까요.]</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 18일 오후 04:44</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_07.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">[됐으니까 둘이 놀아][어차피 나랑 있으면 나한테 붙어있느라 제대로 놀지도 않을 거 아냐][너도 걔 오랜만에 본 거일테고]</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 18일 오후 04:48</div>
+  </div>
+
+<div class="ttobot-status" data-account="@NOMOS_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/nomos_08.png" alt="nomos"></div>
+    <div class="ttobot-name">노모스</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">[그렇긴 한데…][ㅠㅠ 왠지 시현이 없으니까 아쉬워서…]</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 19일 오전 09:00</div>
+  </div>
+
+<div class="ttobot-status" data-account="@Ghost_ATA">
+  <div class="ttobot-avatar-wrapper">
+    <div class="ttobot-avatar"><img src="images/ghost_07.png" alt="ghost"></div>
+    <div class="ttobot-name">윤시현</div>
+  </div>
+  <div class="ttobot-content">
+    <div class="ttobot-content-text">[아쉬워해라][답 안한다][ㅂㅇ]</div>
+    
+  </div>
+  <div class="ttobot-time">2026년 9월 19일 오전 10:35</div>
+  </div>
+  <script src="manifest.js"></script>
+  <script src="theme.js"></script>
+</body>
+</html>
