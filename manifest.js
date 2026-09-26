@@ -1,4 +1,3 @@
-/* apply_theme.js 가 생성합니다 — 직접 고치지 마세요. */
 window.MOST_MANIFEST = {
   "characters": {
     "ghost": {
@@ -8,6 +7,7 @@ window.MOST_MANIFEST = {
         "고스트"
       ],
       "account": "@Ghost_ATA",
+      "side": "right",
       "gens": [
         "01",
         "02",
@@ -24,6 +24,7 @@ window.MOST_MANIFEST = {
         "노모스"
       ],
       "account": "@NOMOS_ATA",
+      "side": "left",
       "gens": [
         "01",
         "02",
@@ -116,11 +117,15 @@ window.MOST_MANIFEST = {
     "0918.html": {
       "ghost": "07",
       "nomos": "08"
+    },
+    "0921.html": {
+      "ghost": "07",
+      "nomos": "08"
     }
   },
   "logs": [
     {
-      "file": "0704.html",
+      "file": "toots/0704.html",
       "month": 7,
       "day": 4,
       "part": null,
@@ -138,7 +143,7 @@ window.MOST_MANIFEST = {
       }
     },
     {
-      "file": "0708.html",
+      "file": "toots/0708.html",
       "month": 7,
       "day": 8,
       "part": null,
@@ -156,7 +161,7 @@ window.MOST_MANIFEST = {
       }
     },
     {
-      "file": "0712.html",
+      "file": "toots/0712.html",
       "month": 7,
       "day": 12,
       "part": null,
@@ -174,7 +179,7 @@ window.MOST_MANIFEST = {
       }
     },
     {
-      "file": "0714.html",
+      "file": "toots/0714.html",
       "month": 7,
       "day": 14,
       "part": null,
@@ -192,7 +197,7 @@ window.MOST_MANIFEST = {
       }
     },
     {
-      "file": "0728.html",
+      "file": "toots/0728.html",
       "month": 7,
       "day": 28,
       "part": null,
@@ -210,7 +215,7 @@ window.MOST_MANIFEST = {
       }
     },
     {
-      "file": "0729.html",
+      "file": "toots/0729.html",
       "month": 7,
       "day": 29,
       "part": null,
@@ -228,7 +233,7 @@ window.MOST_MANIFEST = {
       }
     },
     {
-      "file": "0731.html",
+      "file": "toots/0731.html",
       "month": 7,
       "day": 31,
       "part": null,
@@ -246,7 +251,7 @@ window.MOST_MANIFEST = {
       }
     },
     {
-      "file": "0804.html",
+      "file": "toots/0804.html",
       "month": 8,
       "day": 4,
       "part": null,
@@ -264,7 +269,7 @@ window.MOST_MANIFEST = {
       }
     },
     {
-      "file": "0809_01.html",
+      "file": "toots/0809_01.html",
       "month": 8,
       "day": 9,
       "part": 1,
@@ -282,7 +287,7 @@ window.MOST_MANIFEST = {
       }
     },
     {
-      "file": "0809_02.html",
+      "file": "toots/0809_02.html",
       "month": 8,
       "day": 9,
       "part": 2,
@@ -300,7 +305,7 @@ window.MOST_MANIFEST = {
       }
     },
     {
-      "file": "0813.html",
+      "file": "toots/0813.html",
       "month": 8,
       "day": 13,
       "part": null,
@@ -318,7 +323,7 @@ window.MOST_MANIFEST = {
       }
     },
     {
-      "file": "0816.html",
+      "file": "toots/0816.html",
       "month": 8,
       "day": 16,
       "part": null,
@@ -336,7 +341,7 @@ window.MOST_MANIFEST = {
       }
     },
     {
-      "file": "0820.html",
+      "file": "toots/0820.html",
       "month": 8,
       "day": 20,
       "part": null,
@@ -354,7 +359,7 @@ window.MOST_MANIFEST = {
       }
     },
     {
-      "file": "0824.html",
+      "file": "toots/0824.html",
       "month": 8,
       "day": 24,
       "part": null,
@@ -372,7 +377,7 @@ window.MOST_MANIFEST = {
       }
     },
     {
-      "file": "0828.html",
+      "file": "toots/0828.html",
       "month": 8,
       "day": 28,
       "part": null,
@@ -390,7 +395,7 @@ window.MOST_MANIFEST = {
       }
     },
     {
-      "file": "0831.html",
+      "file": "toots/0831.html",
       "month": 8,
       "day": 31,
       "part": null,
@@ -408,7 +413,7 @@ window.MOST_MANIFEST = {
       }
     },
     {
-      "file": "0903.html",
+      "file": "toots/0903.html",
       "month": 9,
       "day": 3,
       "part": null,
@@ -426,7 +431,7 @@ window.MOST_MANIFEST = {
       }
     },
     {
-      "file": "0907.html",
+      "file": "toots/0907.html",
       "month": 9,
       "day": 7,
       "part": null,
@@ -444,7 +449,7 @@ window.MOST_MANIFEST = {
       }
     },
     {
-      "file": "0913.html",
+      "file": "toots/0913.html",
       "month": 9,
       "day": 13,
       "part": null,
@@ -462,7 +467,7 @@ window.MOST_MANIFEST = {
       }
     },
     {
-      "file": "0918.html",
+      "file": "toots/0918.html",
       "month": 9,
       "day": 18,
       "part": null,
@@ -474,6 +479,24 @@ window.MOST_MANIFEST = {
       "avatar": "images/ghost_07.png",
       "text": "[집에 나 말고 다른 사람 오면 절대 문 열어주지 마][절대][열어주면 오늘 집 안 들어간다]",
       "count": 21,
+      "gens": {
+        "ghost": "07",
+        "nomos": "08"
+      }
+    },
+    {
+      "file": "toots/0921.html",
+      "month": 9,
+      "day": 21,
+      "part": null,
+      "label": "9월 21일",
+      "stamp": "2026년 9월 21일 오후 09:37",
+      "account": "@NOMOS_ATA",
+      "character": "nomos",
+      "speaker": "노모스",
+      "avatar": "images/nomos_08.png",
+      "text": "(언제나 그랬듯, 눈을 뜨는 건 본인이다. 네가 곤히 잠든 것을 가만히 바라본다. 네 머리를 쓸어주기도 하고, 뺨을 손으로 쓸어보기도 하고.)",
+      "count": 578,
       "gens": {
         "ghost": "07",
         "nomos": "08"

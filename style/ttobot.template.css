@@ -9,8 +9,8 @@
  *   라이트/다크 두 팔레트가 표면색을 정의하고, 그 위에 세 가지 색을
  *   theme.js 콘솔이 인라인 스타일로 덮어씁니다.
  *     --accent-point       메인색. 선택 상태·포커스·검색 하이라이트.
- *     --accent-nomos   왼쪽 캐릭터
- *     --accent-ghost  오른쪽 캐릭터
+ *     --accent-__LEFT_ID__   왼쪽 캐릭터
+ *     --accent-__RIGHT_ID__  오른쪽 캐릭터
  *
  * 모드 결정
  *   theme.js 가 시스템 설정을 해석해 :root[data-theme] 를 항상 명시합니다.
@@ -34,12 +34,12 @@
   --text: #1b2733;
   --text-muted: #5d6a78;
   --shadow: 0 1px 3px rgba(27, 39, 51, 0.07);
-  --accent-nomos: #8c4a63;
-  --accent-ghost: #2f6690;
+  --accent-__LEFT_ID__: __LEFT_COLOR_LIGHT__;
+  --accent-__RIGHT_ID__: __RIGHT_COLOR_LIGHT__;
   --accent-point: #4c5fd7;
   --on-point: #ffffff;
-  --on-nomos: #ffffff;
-  --on-ghost: #ffffff;
+  --on-__LEFT_ID__: __LEFT_ON_LIGHT__;
+  --on-__RIGHT_ID__: __RIGHT_ON_LIGHT__;
 }
 
 /* JS가 없을 때만 쓰이는 다크 안전망 — data-theme 이 붙는 순간 무력화됩니다. */
@@ -52,12 +52,12 @@
     --text: #e3eaf3;
     --text-muted: #93a1b3;
     --shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-    --accent-nomos: #dd93ab;
-    --accent-ghost: #7fbbe8;
+    --accent-__LEFT_ID__: __LEFT_COLOR_DARK__;
+    --accent-__RIGHT_ID__: __RIGHT_COLOR_DARK__;
     --accent-point: #8b9bfa;
     --on-point: #0d141d;
-    --on-nomos: #0d141d;
-    --on-ghost: #0d141d;
+    --on-__LEFT_ID__: __LEFT_ON_DARK__;
+    --on-__RIGHT_ID__: __RIGHT_ON_DARK__;
   }
 }
 
@@ -69,12 +69,12 @@
   --text: #1b2733;
   --text-muted: #5d6a78;
   --shadow: 0 1px 3px rgba(27, 39, 51, 0.07);
-  --accent-nomos: #8c4a63;
-  --accent-ghost: #2f6690;
+  --accent-__LEFT_ID__: __LEFT_COLOR_LIGHT__;
+  --accent-__RIGHT_ID__: __RIGHT_COLOR_LIGHT__;
   --accent-point: #4c5fd7;
   --on-point: #ffffff;
-  --on-nomos: #ffffff;
-  --on-ghost: #ffffff;
+  --on-__LEFT_ID__: __LEFT_ON_LIGHT__;
+  --on-__RIGHT_ID__: __RIGHT_ON_LIGHT__;
 }
 
 :root[data-theme="dark"] {
@@ -85,12 +85,12 @@
   --text: #e3eaf3;
   --text-muted: #93a1b3;
   --shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-  --accent-nomos: #dd93ab;
-  --accent-ghost: #7fbbe8;
+  --accent-__LEFT_ID__: __LEFT_COLOR_DARK__;
+  --accent-__RIGHT_ID__: __RIGHT_COLOR_DARK__;
   --accent-point: #8b9bfa;
   --on-point: #0d141d;
-  --on-nomos: #0d141d;
-  --on-ghost: #0d141d;
+  --on-__LEFT_ID__: __LEFT_ON_DARK__;
+  --on-__RIGHT_ID__: __RIGHT_ON_DARK__;
 }
 
 /* 검색 하이라이트는 포인트색에서 파생시켜, 직접 고른 색도 그대로 따라오게 합니다. */
@@ -151,12 +151,12 @@ body {
   background: var(--bg-card-alt);
 }
 
-.ttobot-status[data-account="@Ghost_ATA"] {
-  border-left-color: var(--accent-ghost);
+.ttobot-status[data-account="__RIGHT_ACCOUNT__"] {
+  border-left-color: var(--accent-__RIGHT_ID__);
 }
 
-.ttobot-status[data-account="@NOMOS_ATA"] {
-  border-left-color: var(--accent-nomos);
+.ttobot-status[data-account="__LEFT_ACCOUNT__"] {
+  border-left-color: var(--accent-__LEFT_ID__);
 }
 
 /* avatar column */
@@ -196,12 +196,12 @@ body {
   color: var(--text-muted);
 }
 
-.ttobot-status[data-account="@Ghost_ATA"] .ttobot-name {
-  color: var(--accent-ghost);
+.ttobot-status[data-account="__RIGHT_ACCOUNT__"] .ttobot-name {
+  color: var(--accent-__RIGHT_ID__);
 }
 
-.ttobot-status[data-account="@NOMOS_ATA"] .ttobot-name {
-  color: var(--accent-nomos);
+.ttobot-status[data-account="__LEFT_ACCOUNT__"] .ttobot-name {
+  color: var(--accent-__LEFT_ID__);
 }
 
 /* content */
@@ -302,12 +302,12 @@ body.reader-page {
 }
 
 /* 이 칸 전체가 쓰는 캐릭터 색. 아래 카드·이름 바·배지가 이 값을 물려받습니다. */
-.reader-side[data-character="nomos"] {
-  --character: var(--accent-nomos);
+.reader-side[data-character="__LEFT_ID__"] {
+  --character: var(--accent-__LEFT_ID__);
 }
 
-.reader-side[data-character="ghost"] {
-  --character: var(--accent-ghost);
+.reader-side[data-character="__RIGHT_ID__"] {
+  --character: var(--accent-__RIGHT_ID__);
 }
 
 .reader-portrait {
@@ -770,16 +770,16 @@ html.in-pane body .ttobot-status:nth-child(even) {
 }
 
 /* 어느 쪽에 붙고 무슨 색을 쓸지 — 계정으로 가릅니다. */
-html.in-pane body .ttobot-status[data-account="@NOMOS_ATA"] {
+html.in-pane body .ttobot-status[data-account="__LEFT_ACCOUNT__"] {
   flex-direction: row;
-  --bubble: var(--accent-nomos);
-  --bubble-text: var(--on-nomos);
+  --bubble: var(--accent-__LEFT_ID__);
+  --bubble-text: var(--on-__LEFT_ID__);
 }
 
-html.in-pane body .ttobot-status[data-account="@Ghost_ATA"] {
+html.in-pane body .ttobot-status[data-account="__RIGHT_ACCOUNT__"] {
   flex-direction: row-reverse;
-  --bubble: var(--accent-ghost);
-  --bubble-text: var(--on-ghost);
+  --bubble: var(--accent-__RIGHT_ID__);
+  --bubble-text: var(--on-__RIGHT_ID__);
 }
 
 html.in-pane body .ttobot-avatar-wrapper {
@@ -820,13 +820,13 @@ html.in-pane body .ttobot-content::before {
   border: 6px solid transparent;
 }
 
-html.in-pane body .ttobot-status[data-account="@NOMOS_ATA"] .ttobot-content::before {
+html.in-pane body .ttobot-status[data-account="__LEFT_ACCOUNT__"] .ttobot-content::before {
   left: -10px;
   border-right-color: var(--bubble);
   border-left-width: 4px;
 }
 
-html.in-pane body .ttobot-status[data-account="@Ghost_ATA"] .ttobot-content::before {
+html.in-pane body .ttobot-status[data-account="__RIGHT_ACCOUNT__"] .ttobot-content::before {
   right: -10px;
   border-left-color: var(--bubble);
   border-right-width: 4px;
@@ -862,11 +862,11 @@ html.in-pane body .ttobot-time span {
   display: block;
 }
 
-html.in-pane body .ttobot-status[data-account="@NOMOS_ATA"] .ttobot-time {
+html.in-pane body .ttobot-status[data-account="__LEFT_ACCOUNT__"] .ttobot-time {
   text-align: left;
 }
 
-html.in-pane body .ttobot-status[data-account="@Ghost_ATA"] .ttobot-time {
+html.in-pane body .ttobot-status[data-account="__RIGHT_ACCOUNT__"] .ttobot-time {
   text-align: right;
 }
 

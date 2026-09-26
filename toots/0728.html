@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>7월 28일</title>
   <script id="most-theme-boot">
-    /* 저장된 테마와 아바타를 첫 페인트 전에 적용합니다. theme.js 가 나머지를 맡습니다. */
     (function () {
       var root = document.documentElement;
       function readable(hex) {
@@ -32,18 +31,15 @@
           if (!/^#[0-9a-f]{6}$/i.test(custom[key])) continue;
           root.style.setProperty("--accent-" + key, custom[key]);
           if (key === "ghost" || key === "nomos") {
-            /* 말풍선 글자색 — 흰색과 짙은 잉크 중 대비가 큰 쪽 */
             root.style.setProperty("--on-" + key, readable(custom[key]));
           }
         }
       } catch (e) {
-        /* 저장이 막혀 있으면 CSS 기본 팔레트로 갑니다. */
       }
       try {
-        /* 이 페이지가 쓰는 세대만 골라 배경으로 덮어씁니다. */
         var saved = JSON.parse(localStorage.getItem("most-avatars") || "{}");
         var rules = "";
-        var accounts = { ghost: "@Ghost_ATA", nomos: "@NOMOS_ATA" };
+        var accounts = {"ghost":"@Ghost_ATA","nomos":"@NOMOS_ATA"};
         for (var name in accounts) {
           var gen = root.getAttribute("data-gen-" + name);
           var url = gen && saved[name + ":" + gen];
@@ -59,17 +55,20 @@
           document.head.appendChild(style);
         }
       } catch (e) {
-        /* 아바타를 못 읽으면 원본 이미지가 그대로 보입니다. */
+      }
+      try {
+        if (window.self !== window.top) root.classList.add("in-pane");
+      } catch (e) {
+        root.classList.add("in-pane");
       }
     })();
   </script>
-  <link rel="stylesheet" href="style/ttobot.css">
-  <script src="search.js"></script>
+  <link rel="stylesheet" href="../style/ttobot.css">
 </head>
 <body>
 <div class="ttobot-status" data-account="@NOMOS_ATA">
   <div class="ttobot-avatar-wrapper">
-    <div class="ttobot-avatar"><img src="images/nomos_02.png" alt="nomos"></div>
+    <div class="ttobot-avatar"><img src="../images/nomos_02.png" alt="nomos"></div>
     <div class="ttobot-name">노모스</div>
   </div>
   <div class="ttobot-content">
@@ -81,7 +80,7 @@
 
 <div class="ttobot-status" data-account="@Ghost_ATA">
   <div class="ttobot-avatar-wrapper">
-    <div class="ttobot-avatar"><img src="images/ghost_02.png" alt="ghost"></div>
+    <div class="ttobot-avatar"><img src="../images/ghost_02.png" alt="ghost"></div>
     <div class="ttobot-name">고스트</div>
   </div>
   <div class="ttobot-content">
@@ -93,7 +92,7 @@
 
 <div class="ttobot-status" data-account="@NOMOS_ATA">
   <div class="ttobot-avatar-wrapper">
-    <div class="ttobot-avatar"><img src="images/nomos_02.png" alt="nomos"></div>
+    <div class="ttobot-avatar"><img src="../images/nomos_02.png" alt="nomos"></div>
     <div class="ttobot-name">노모스</div>
   </div>
   <div class="ttobot-content">
@@ -105,7 +104,7 @@
 
 <div class="ttobot-status" data-account="@Ghost_ATA">
   <div class="ttobot-avatar-wrapper">
-    <div class="ttobot-avatar"><img src="images/ghost_02.png" alt="ghost"></div>
+    <div class="ttobot-avatar"><img src="../images/ghost_02.png" alt="ghost"></div>
     <div class="ttobot-name">고스트</div>
   </div>
   <div class="ttobot-content">
@@ -117,7 +116,7 @@
 
 <div class="ttobot-status" data-account="@NOMOS_ATA">
   <div class="ttobot-avatar-wrapper">
-    <div class="ttobot-avatar"><img src="images/nomos_02.png" alt="nomos"></div>
+    <div class="ttobot-avatar"><img src="../images/nomos_02.png" alt="nomos"></div>
     <div class="ttobot-name">노모스</div>
   </div>
   <div class="ttobot-content">
@@ -129,7 +128,7 @@
 
 <div class="ttobot-status" data-account="@Ghost_ATA">
   <div class="ttobot-avatar-wrapper">
-    <div class="ttobot-avatar"><img src="images/ghost_02.png" alt="ghost"></div>
+    <div class="ttobot-avatar"><img src="../images/ghost_02.png" alt="ghost"></div>
     <div class="ttobot-name">고스트</div>
   </div>
   <div class="ttobot-content">
@@ -141,7 +140,7 @@
 
 <div class="ttobot-status" data-account="@NOMOS_ATA">
   <div class="ttobot-avatar-wrapper">
-    <div class="ttobot-avatar"><img src="images/nomos_02.png" alt="nomos"></div>
+    <div class="ttobot-avatar"><img src="../images/nomos_02.png" alt="nomos"></div>
     <div class="ttobot-name">노모스</div>
   </div>
   <div class="ttobot-content">
@@ -153,7 +152,7 @@
 
 <div class="ttobot-status" data-account="@Ghost_ATA">
   <div class="ttobot-avatar-wrapper">
-    <div class="ttobot-avatar"><img src="images/ghost_02.png" alt="ghost"></div>
+    <div class="ttobot-avatar"><img src="../images/ghost_02.png" alt="ghost"></div>
     <div class="ttobot-name">고스트</div>
   </div>
   <div class="ttobot-content">
@@ -165,7 +164,7 @@
 
 <div class="ttobot-status" data-account="@NOMOS_ATA">
   <div class="ttobot-avatar-wrapper">
-    <div class="ttobot-avatar"><img src="images/nomos_02.png" alt="nomos"></div>
+    <div class="ttobot-avatar"><img src="../images/nomos_02.png" alt="nomos"></div>
     <div class="ttobot-name">노모스</div>
   </div>
   <div class="ttobot-content">
@@ -177,7 +176,7 @@
 
 <div class="ttobot-status" data-account="@Ghost_ATA">
   <div class="ttobot-avatar-wrapper">
-    <div class="ttobot-avatar"><img src="images/ghost_02.png" alt="ghost"></div>
+    <div class="ttobot-avatar"><img src="../images/ghost_02.png" alt="ghost"></div>
     <div class="ttobot-name">고스트</div>
   </div>
   <div class="ttobot-content">
@@ -189,7 +188,7 @@
 
 <div class="ttobot-status" data-account="@NOMOS_ATA">
   <div class="ttobot-avatar-wrapper">
-    <div class="ttobot-avatar"><img src="images/nomos_02.png" alt="nomos"></div>
+    <div class="ttobot-avatar"><img src="../images/nomos_02.png" alt="nomos"></div>
     <div class="ttobot-name">노모스</div>
   </div>
   <div class="ttobot-content">
@@ -201,7 +200,7 @@
 
 <div class="ttobot-status" data-account="@Ghost_ATA">
   <div class="ttobot-avatar-wrapper">
-    <div class="ttobot-avatar"><img src="images/ghost_02.png" alt="ghost"></div>
+    <div class="ttobot-avatar"><img src="../images/ghost_02.png" alt="ghost"></div>
     <div class="ttobot-name">고스트</div>
   </div>
   <div class="ttobot-content">
@@ -213,7 +212,7 @@
 
 <div class="ttobot-status" data-account="@NOMOS_ATA">
   <div class="ttobot-avatar-wrapper">
-    <div class="ttobot-avatar"><img src="images/nomos_02.png" alt="nomos"></div>
+    <div class="ttobot-avatar"><img src="../images/nomos_02.png" alt="nomos"></div>
     <div class="ttobot-name">노모스</div>
   </div>
   <div class="ttobot-content">
@@ -222,7 +221,8 @@
   </div>
   <div class="ttobot-time">2026년 7월 28일 오후 04:42</div>
   </div>
-  <script src="manifest.js"></script>
-  <script src="theme.js"></script>
+  <script src="../search.js"></script>
+  <script src="../manifest.js"></script>
+  <script src="../theme.js"></script>
   </body>
 </html>

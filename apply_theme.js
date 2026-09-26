@@ -1,34 +1,58 @@
 /* 모든 로그 HTML에 컬러 콘솔을 붙이고, 아바타 목록을 만들어 냅니다.
  *   실행:  .\apply_theme.ps1   (또는 node apply_theme.js — 한글 경로에선 Node가 크래시할 수 있음)
- *
- * 하는 일
- *   0. 마스토돈에서 갓 뽑은 조각 파일(<div class="ttobot-status"> 목록만 있는)을
- *      <!DOCTYPE>·<head>·<body> 뼈대로 감쌉니다. 이미 완성된 문서는 건드리지 않습니다.
- *   1. <html> 에 이 페이지가 쓰는 아바타 세대를 새깁니다 (data-gen-ghost="05" 등).
- *      → 부트 스니펫이 body 파싱 전에도 어떤 이미지를 갈아끼울지 알 수 있습니다.
- *   2. <head> 안, 스타일시트 링크 앞에 인라인 부트 스니펫을 넣습니다.
- *      → 첫 페인트 전에 색과 아바타를 입혀 번쩍임을 막습니다. 인라인이어야만 합니다.
- *   3. </body> 앞에 avatars.js + theme.js 를 붙입니다.
- *   4. avatars.js 를 생성합니다 — 캐릭터별 세대 목록과 날짜별 사용 현황.
- *
- * 로그 HTML은 CRLF, index.html 은 LF 라서 파일마다 줄바꿈을 감지해 맞춥니다.
- * 여러 번 돌려도 안전합니다 (부트 스니펫은 갱신, 나머지는 중복 방지).
- */
+*/
 
 const fs = require("fs");
 const path = require("path");
 
-const ROOT = process.env.MOST_ROOT || __dirname;
+const ROOT = process.env.ENTY_ROOT || __dirname;
+const LOGS_DIR = path.join(ROOT, "toots");
+const LOGS_PREFIX = "toots/";
+const ASSET_PREFIX = "../";
 const MARK = "most-theme-boot";
 
+fs.mkdirSync(LOGS_DIR, { recursive: true });
+
+// 캐릭터를 바꿀 땐 여기만 고치고 .\apply_theme.ps1 을 다시 돌리세요.
+// manifest.js, toots/*.html 의 부트 스니펫, style/ttobot.css, index.html 이 전부 여기서 갈립니다.
+// side 는 "left"/"right" 정확히 하나씩 — index.html 좌우 배치와 말풍선 방향을 정합니다.
+// color* 는 프로필/말풍선 기본색(라이트·다크). 글자색(흰/잉크)은 대비를 계산해 자동으로 정합니다.
 const CHARACTERS = {
-  ghost: { label: "고스트", account: "@Ghost_ATA" },
-  nomos: { label: "노모스", account: "@NOMOS_ATA" },
+  ghost: { label: "고스트", account: "@Ghost_ATA", side: "right", colorLight: "#2f6690", colorDark: "#7fbbe8" },
+  nomos: { label: "노모스", account: "@NOMOS_ATA", side: "left", colorLight: "#8c4a63", colorDark: "#dd93ab" },
 };
 
-const BOOT_LINES = [
+{
+  const sides = Object.values(CHARACTERS).map(c => c.side);
+  if (sides.filter(s => s === "left").length !== 1 || sides.filter(s => s === "right").length !== 1) {
+    console.error("CHARACTERS 는 side: \"left\" 하나, side: \"right\" 하나로 정확히 설정해야 합니다.");
+    process.exit(1);
+  }
+}
+
+// 말풍선 위에 얹을 글자색 — 흰색과 짙은 잉크 중 대비가 큰 쪽. theme.js/부트 스니펫과 같은 공식.
+const INK = "#0d141d";
+function relativeLuminance(hex) {
+  const channel = i => {
+    const v = parseInt(hex.slice(i, i + 2), 16) / 255;
+    return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4;
+  };
+  return 0.2126 * channel(1) + 0.7152 * channel(3) + 0.0722 * channel(5);
+}
+function readableOn(hex) {
+  const bg = relativeLuminance(hex);
+  const onWhite = 1.05 / (bg + 0.05);
+  const onInk = (bg + 0.05) / (relativeLuminance(INK) + 0.05);
+  return onWhite >= onInk ? "#ffffff" : INK;
+}
+
+function buildBootLines() {
+  const ids = Object.keys(CHARACTERS);
+  const accounts = Object.fromEntries(ids.map(id => [id, CHARACTERS[id].account]));
+  const isCharacterKey = ids.map(id => `key === "${id}"`).join(" || ") || "false";
+
+  return [
   `  <script id="${MARK}">`,
-  `    /* 저장된 테마와 아바타를 첫 페인트 전에 적용합니다. theme.js 가 나머지를 맡습니다. */`,
   `    (function () {`,
   `      var root = document.documentElement;`,
   `      function readable(hex) {`,
@@ -54,19 +78,16 @@ const BOOT_LINES = [
   `        for (var key in custom) {`,
   `          if (!/^#[0-9a-f]{6}$/i.test(custom[key])) continue;`,
   `          root.style.setProperty("--accent-" + key, custom[key]);`,
-  `          if (key === "ghost" || key === "nomos") {`,
-  `            /* 말풍선 글자색 — 흰색과 짙은 잉크 중 대비가 큰 쪽 */`,
+  `          if (${isCharacterKey}) {`,
   `            root.style.setProperty("--on-" + key, readable(custom[key]));`,
   `          }`,
   `        }`,
   `      } catch (e) {`,
-  `        /* 저장이 막혀 있으면 CSS 기본 팔레트로 갑니다. */`,
   `      }`,
   `      try {`,
-  `        /* 이 페이지가 쓰는 세대만 골라 배경으로 덮어씁니다. */`,
   `        var saved = JSON.parse(localStorage.getItem("most-avatars") || "{}");`,
   `        var rules = "";`,
-  `        var accounts = { ghost: "@Ghost_ATA", nomos: "@NOMOS_ATA" };`,
+  `        var accounts = ${JSON.stringify(accounts)};`,
   `        for (var name in accounts) {`,
   `          var gen = root.getAttribute("data-gen-" + name);`,
   `          var url = gen && saved[name + ":" + gen];`,
@@ -82,26 +103,29 @@ const BOOT_LINES = [
   `          document.head.appendChild(style);`,
   `        }`,
   `      } catch (e) {`,
-  `        /* 아바타를 못 읽으면 원본 이미지가 그대로 보입니다. */`,
+  `      }`,
+  `      try {`,
+  `        if (window.self !== window.top) root.classList.add("in-pane");`,
+  `      } catch (e) {`,
+  `        root.classList.add("in-pane");`,
   `      }`,
   `    })();`,
   `  </script>`,
-];
+  ];
+}
 
 // ── 파일 훑기 ──
 
 const files = fs
-  .readdirSync(ROOT)
+  .readdirSync(LOGS_DIR)
   .filter(name => name.endsWith(".html") && !name.startsWith("_"));
 
 if (!files.length) {
-  console.error("HTML 파일을 찾지 못했습니다.");
+  console.error(`toots/ 안에서 HTML 파일을 찾지 못했습니다. (${LOGS_DIR})`);
   process.exit(1);
 }
 
 // ── 0) 조각 파일 감싸기 ──
-// 마스토돈 로그는 <div class="ttobot-status"> 목록뿐입니다. 뼈대가 없으면 여기서 씌웁니다.
-// "0903.html" → <title>9월 3일</title>,  "0809_01.html" → <title>8월 9일 (1편)</title>
 
 function pageTitle(name) {
   const m = name.match(/^(\d{1,2})(\d{2})(?:_(\d+))?\.html$/);
@@ -111,7 +135,7 @@ function pageTitle(name) {
 }
 
 for (const name of files) {
-  const file = path.join(ROOT, name);
+  const file = path.join(LOGS_DIR, name);
   const raw = fs.readFileSync(file, "utf8");
   if (/<!doctype/i.test(raw) || /<html[\s>]/i.test(raw)) continue;
 
@@ -124,7 +148,7 @@ for (const name of files) {
     `  <meta charset="UTF-8">`,
     `  <meta name="viewport" content="width=device-width, initial-scale=1.0">`,
     `  <title>${pageTitle(name)}</title>`,
-    `  <link rel="stylesheet" href="style/ttobot.css">`,
+    `  <link rel="stylesheet" href="${ASSET_PREFIX}style/ttobot.css">`,
     `</head>`,
     `<body>`,
     body,
@@ -139,7 +163,6 @@ for (const name of files) {
 
 const pages = {};
 const gensByCharacter = {};
-// 표시 이름은 로그마다 다를 수 있습니다 (@Ghost_ATA 가 뒤쪽 로그에서 "윤시현"). 데이터에서 모읍니다.
 const namesByCharacter = {};
 for (const name of Object.keys(CHARACTERS)) {
   gensByCharacter[name] = new Set();
@@ -147,10 +170,10 @@ for (const name of Object.keys(CHARACTERS)) {
 }
 
 for (const name of files) {
-  const html = fs.readFileSync(path.join(ROOT, name), "utf8");
+  const html = fs.readFileSync(path.join(LOGS_DIR, name), "utf8");
   const found = {};
   for (const character of Object.keys(CHARACTERS)) {
-    const hits = [...html.matchAll(new RegExp(`images/${character}_(\\d+)\\.png`, "g"))]
+    const hits = [...html.matchAll(new RegExp(`(?:\\.\\./)*images/${character}_(\\d+)\\.png`, "g"))]
       .map(m => m[1]);
     if (!hits.length) continue;
 
@@ -178,15 +201,18 @@ let injected = 0;
 let skipped = 0;
 
 for (const name of files) {
-  const file = path.join(ROOT, name);
+  const file = path.join(LOGS_DIR, name);
   let html = fs.readFileSync(file, "utf8");
   const before = html;
 
-  // 이 파일이 쓰는 줄바꿈을 그대로 따라갑니다. 섞이면 diff 가 통째로 뒤집힙니다.
   const eol = html.includes("\r\n") ? "\r\n" : "\n";
-  const boot = BOOT_LINES.join(eol) + eol;
+  const boot = buildBootLines().join(eol) + eol;
 
-  // 1) <html> 에 이 페이지의 아바타 세대를 새깁니다.
+  // 0
+  html = html.replace(/(?:\.\.\/)*images\//g, `${ASSET_PREFIX}images/`);
+  html = html.replace(/(?:\.\.\/)*style\/ttobot\.css/g, `${ASSET_PREFIX}style/ttobot.css`);
+
+  // 1
   const gens = pages[name] || {};
   html = html.replace(/<html([^>]*)>/i, (_match, attrs) => {
     let cleaned = attrs.replace(/\s+data-gen-[a-z]+="[^"]*"/g, "");
@@ -196,7 +222,7 @@ for (const name of files) {
     return `<html${cleaned}>`;
   });
 
-  // 2) 부트 스니펫 — 이미 있으면 최신 내용으로 갈아끼웁니다.
+  // 2
   const existing = new RegExp(`[ \\t]*<script id="${MARK}">[\\s\\S]*?</script>\\r?\\n`);
   if (existing.test(html)) {
     html = html.replace(existing, boot);
@@ -213,18 +239,16 @@ for (const name of files) {
     }
   }
 
-  // 3) avatars.js + theme.js — theme.js 가 manifest 를 읽으므로 순서가 중요합니다.
-  //    이미 있는 태그는 걷어내고 항상 이 순서로 다시 답니다.
+  // 3
   html = html.replace(
-    /[ \t]*<script[^>]+src=["'](?:avatars|manifest|reader|theme)\.js["']\s*><\/script>[ \t]*\r?\n/g,
+    /[ \t]*<script[^>]+src=["'](?:\.\.\/)*(?:avatars|manifest|reader|search|theme)\.js["']\s*><\/script>[ \t]*\r?\n/g,
     ""
   );
-  // manifest 는 항상 먼저. 리더는 목차 페이지에만 필요합니다.
-  const scripts = ["manifest.js"];
+  const scripts = ["search.js", "manifest.js"];
   if (/class="[^"]*reader-page/.test(html)) scripts.push("reader.js");
   scripts.push("theme.js");
 
-  const tags = scripts.map(src => `  <script src="${src}"></script>${eol}`).join("");
+  const tags = scripts.map(src => `  <script src="${ASSET_PREFIX}${src}"></script>${eol}`).join("");
   html = /<\/body>/i.test(html)
     ? html.replace(/([ \t]*)<\/body>/i, `${tags}$1</body>`)
     : html + tags;
@@ -249,7 +273,6 @@ const decode = text => text
   .replace(/&quot;/g, '"').replace(/&#39;/g, "'")
   .replace(/&nbsp;/g, " ").replace(/&amp;/g, "&");
 
-// "2026년 7월 04일 오후 10:09" → { month: 7, day: 4 }
 function parseStamp(stamp) {
   const match = stamp.match(/(\d+)년\s*(\d+)월\s*(\d+)일/);
   if (!match) return null;
@@ -259,9 +282,7 @@ function parseStamp(stamp) {
 const logs = [];
 
 for (const name of files) {
-  if (name === "index.html") continue;
-
-  const html = fs.readFileSync(path.join(ROOT, name), "utf8");
+  const html = fs.readFileSync(path.join(LOGS_DIR, name), "utf8");
   const count = (html.match(/class="ttobot-status"/g) || []).length;
   if (!count) continue;
 
@@ -281,11 +302,10 @@ for (const name of files) {
     .replace(/\s+/g, " ").trim();
 
   const when = parseStamp(stamp.trim());
-  // 같은 날 로그가 둘이면 파일명 뒤 번호로 구분합니다 (0809_01 → 1편).
   const part = (name.match(/_(\d+)\.html$/) || [])[1];
 
   logs.push({
-    file: name,
+    file: LOGS_PREFIX + name,
     month: when ? when.month : 0,
     day: when ? when.day : 0,
     part: part ? Number(part) : null,
@@ -307,7 +327,6 @@ logs.sort((a, b) => a.month - b.month || a.day - b.day || (a.part || 0) - (b.par
 
 const manifest = { characters: {}, pages, logs };
 for (const [name, meta] of Object.entries(CHARACTERS)) {
-  // 많이 쓰인 순으로 정렬해, 이름이 바뀐 캐릭터는 둘 다 보여 줍니다.
   const shown = [...namesByCharacter[name].entries()]
     .sort((a, b) => b[1] - a[1])
     .map(([label]) => label);
@@ -315,24 +334,71 @@ for (const [name, meta] of Object.entries(CHARACTERS)) {
     label: shown.length ? shown.join(" · ") : meta.label,
     names: shown,
     account: meta.account,
+    side: meta.side,
     gens: [...gensByCharacter[name]].sort(),
   };
 }
 
 fs.writeFileSync(
   path.join(ROOT, "manifest.js"),
-  "/* apply_theme.js 가 생성합니다 — 직접 고치지 마세요. */\n" +
     "window.MOST_MANIFEST = " + JSON.stringify(manifest, null, 2) + ";\n",
   "utf8"
 );
 
-// 이전 이름의 생성물이 남아 있으면 치웁니다.
 const stale = path.join(ROOT, "avatars.js");
 if (fs.existsSync(stale)) {
   fs.unlinkSync(stale);
-  console.log("  제거: avatars.js (manifest.js 로 대체)");
+  console.log("  제거: avatars.js");
 }
 
-console.log(`\nmanifest.js 생성 — 로그 ${logs.length}개, ` +
+// ── 템플릿 → style/ttobot.css, index.html ──
+// CHARACTERS 만 고치면 이 두 파일도 자동으로 따라옵니다. 직접 고치지 마세요.
+
+const [leftId, leftMeta] = Object.entries(CHARACTERS).find(([, c]) => c.side === "left");
+const [rightId, rightMeta] = Object.entries(CHARACTERS).find(([, c]) => c.side === "right");
+
+const TOKENS = {
+  LEFT_ID: leftId,
+  LEFT_LABEL: leftMeta.label,
+  LEFT_ACCOUNT: leftMeta.account,
+  LEFT_COLOR_LIGHT: leftMeta.colorLight,
+  LEFT_COLOR_DARK: leftMeta.colorDark,
+  LEFT_ON_LIGHT: readableOn(leftMeta.colorLight),
+  LEFT_ON_DARK: readableOn(leftMeta.colorDark),
+  RIGHT_ID: rightId,
+  RIGHT_LABEL: rightMeta.label,
+  RIGHT_ACCOUNT: rightMeta.account,
+  RIGHT_COLOR_LIGHT: rightMeta.colorLight,
+  RIGHT_COLOR_DARK: rightMeta.colorDark,
+  RIGHT_ON_LIGHT: readableOn(rightMeta.colorLight),
+  RIGHT_ON_DARK: readableOn(rightMeta.colorDark),
+};
+
+function renderTemplate(templateName, outName, extraTokens) {
+  const templatePath = path.join(ROOT, templateName);
+  if (!fs.existsSync(templatePath)) {
+    console.warn(`  건너뜀: ${templateName} 를 찾지 못했습니다.`);
+    return;
+  }
+  let text = fs.readFileSync(templatePath, "utf8");
+  const eol = text.includes("\r\n") ? "\r\n" : "\n";
+  const tokens = { ...TOKENS, ...extraTokens(eol) };
+  for (const [key, value] of Object.entries(tokens)) {
+    text = text.split(`__${key}__`).join(value);
+  }
+  const missing = text.match(/__[A-Z_]+__/);
+  if (missing) {
+    console.warn(`  주의: ${outName} 에 채워지지 않은 자리표시자 ${missing[0]} 가 남아 있습니다.`);
+  }
+  fs.writeFileSync(path.join(ROOT, outName), text, "utf8");
+  console.log(`  생성: ${outName}`);
+}
+
+renderTemplate("style/ttobot.template.css", "style/ttobot.css", () => ({}));
+renderTemplate("index.template.html", "index.html", eol => ({
+  BOOT_SNIPPET: buildBootLines().join(eol),
+}));
+
+console.log(`\n로그 ${logs.length}개, ` +
   Object.values(manifest.characters).map(v => `${v.label} ${v.gens.length}세대`).join(", "));
 console.log(`완료 — 적용 ${injected}개, 건너뜀 ${skipped}개.`);

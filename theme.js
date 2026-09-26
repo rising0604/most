@@ -27,11 +27,13 @@
   // 메인색은 선택 상태·포커스·검색 하이라이트 등 화면 전반에 쓰입니다.
   const MAIN = { id: "point", label: "메인" };
 
-  // 표시 이름은 manifest 에서 읽습니다 (@Ghost_ATA 가 뒤쪽 로그에서 "윤시현").
-  const CHARACTERS = [
-    { id: "ghost", label: "고스트" },
-    { id: "nomos", label: "노모스" },
-  ];
+  // apply_theme.js 가 만들어 둔 세대 목록. manifest.js 가 이 스크립트보다 먼저 실려서,
+  // 캐릭터 id·계정·표시 이름을 전부 여기서 읽습니다 — "ghost"/"nomos" 를 다시 적지 않습니다.
+  // 없으면 아바타·색 기능만 조용히 빠집니다.
+  const MANIFEST = window.MOST_MANIFEST || null;
+
+  const CHARACTER_IDS = Object.keys(MANIFEST?.characters || {});
+  const CHARACTERS = CHARACTER_IDS.map(id => ({ id, label: MANIFEST.characters[id].label }));
 
   const ACCENTS = [MAIN, ...CHARACTERS];
 
@@ -42,10 +44,6 @@
 
   const root = document.documentElement;
   const darkQuery = matchMedia("(prefers-color-scheme: dark)");
-
-  // apply_theme.js 가 만들어 둔 세대 목록. 없으면 아바타 기능만 조용히 빠집니다.
-  // 스크립트 순서에 기대지 않도록 run() 시점에 읽습니다.
-  let MANIFEST = null;
 
   // —— 상태 ——
 
@@ -118,7 +116,7 @@
     }
 
     // 캐릭터 색이 정해진 뒤에 읽어야 프리셋 기본값도 함께 반영됩니다.
-    for (const id of ["ghost", "nomos"]) {
+    for (const id of CHARACTER_IDS) {
       const resolved = toHex(getComputedStyle(root).getPropertyValue(`--accent-${id}`));
       if (resolved) root.style.setProperty(`--on-${id}`, readableOn(resolved));
     }
@@ -565,19 +563,18 @@
   }
 
   function run() {
-    MANIFEST = window.MOST_MANIFEST || null;
-
-    // 리더의 스레드 칸(iframe)에 실렸는지 알립니다. CSS 가 여백을 줄입니다.
-    let inPane = false;
-    try {
-      inPane = window.self !== window.top;
-    } catch {
-      inPane = true;
+    // 부트 스니펫이 <html> 에 이미 .in-pane 을 붙여 뒀습니다 (첫 페인트 전 플래시 방지).
+    // 옛 캐시나 스니펫 없이 열린 경우를 대비해 여기서도 한 번 더 확인합니다.
+    let inPane = document.documentElement.classList.contains("in-pane");
+    if (!inPane) {
+      try {
+        inPane = window.self !== window.top;
+      } catch {
+        inPane = true;
+      }
+      if (inPane) document.documentElement.classList.add("in-pane");
     }
-    if (inPane) {
-      document.body.classList.add("in-pane");
-      splitTimes();
-    }
+    if (inPane) splitTimes();
 
     apply();
     applyAvatars();
