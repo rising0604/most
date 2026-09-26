@@ -14,8 +14,8 @@ const MARK = "most-theme-boot";
 fs.mkdirSync(LOGS_DIR, { recursive: true });
 
 // 캐릭터를 바꿀 땐 여기만 고치고 .\apply_theme.ps1 을 다시 돌리세요.
-// manifest.js, toots/*.html 의 부트 스니펫, style/ttobot.css, index.html 이 전부 여기서 갈립니다.
-// side 는 "left"/"right" 정확히 하나씩 — index.html 좌우 배치와 말풍선 방향을 정합니다.
+// manifest.js, toots/*.html 의 부트 스니펫, style/ttobot.css, reader.html 이 전부 여기서 갈립니다.
+// side 는 "left"/"right" 정확히 하나씩 — reader.html 좌우 배치와 말풍선 방향을 정합니다.
 // color* 는 프로필/말풍선 기본색(라이트·다크). 글자색(흰/잉크)은 대비를 계산해 자동으로 정합니다.
 const CHARACTERS = {
   ghost: { label: "고스트", account: "@Ghost_ATA", side: "right", colorLight: "#2f6690", colorDark: "#7fbbe8" },
@@ -351,8 +351,8 @@ if (fs.existsSync(stale)) {
   console.log("  제거: avatars.js");
 }
 
-// ── 템플릿 → style/ttobot.css, index.html ──
-// CHARACTERS 만 고치면 이 두 파일도 자동으로 따라옵니다. 직접 고치지 마세요.
+// ── 템플릿 → style/ttobot.css, reader.html, index.html, logs.html ──
+// CHARACTERS 만 고치면 이 파일들도 자동으로 따라옵니다. 직접 고치지 마세요.
 
 const [leftId, leftMeta] = Object.entries(CHARACTERS).find(([, c]) => c.side === "left");
 const [rightId, rightMeta] = Object.entries(CHARACTERS).find(([, c]) => c.side === "right");
@@ -395,8 +395,33 @@ function renderTemplate(templateName, outName, extraTokens) {
 }
 
 renderTemplate("style/ttobot.template.css", "style/ttobot.css", () => ({}));
+renderTemplate("reader.template.html", "reader.html", eol => ({
+  BOOT_SNIPPET: buildBootLines().join(eol),
+}));
 renderTemplate("index.template.html", "index.html", eol => ({
   BOOT_SNIPPET: buildBootLines().join(eol),
+}));
+
+// ── logs/ 원본 로그 목록 → logs.html ──
+// 이 폴더의 파일들은 toots/ 파이프라인을 타지 않는 원본 로그입니다 — 그대로 나열만 합니다.
+const RAW_LOGS_DIR = path.join(ROOT, "logs");
+fs.mkdirSync(RAW_LOGS_DIR, { recursive: true });
+const rawLogFiles = fs
+  .readdirSync(RAW_LOGS_DIR)
+  .filter(name => name.endsWith(".html"))
+  .sort((a, b) => a.localeCompare(b, "ko"));
+
+renderTemplate("logs.template.html", "logs.html", eol => ({
+  BOOT_SNIPPET: buildBootLines().join(eol),
+  LOGS_LIST: rawLogFiles.length
+    ? [
+        `    <ul class="most-logs-list">`,
+        ...rawLogFiles.map(name =>
+          `      <li><a href="logs/${encodeURIComponent(name)}">${name.replace(/\.html$/, "")}</a></li>`
+        ),
+        `    </ul>`,
+      ].join(eol)
+    : `    <p class="most-logs-empty">logs/ 폴더가 비어 있습니다.</p>`,
 }));
 
 console.log(`\n로그 ${logs.length}개, ` +

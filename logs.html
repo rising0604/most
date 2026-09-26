@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<!-- apply_theme.js 가 index.template.html 로부터 자동 생성합니다.
+<!-- apply_theme.js 가 logs.template.html 로부터 자동 생성합니다.
+     logs/ 폴더에 파일을 넣거나 뺀 뒤 .\apply_theme.ps1 을 다시 돌리면 목록이 갱신됩니다.
      직접 고치지 마세요 — 다음 실행 때 덮어써집니다. -->
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MOST</title>
+  <title>MOST · 로그</title>
   <script id="most-theme-boot">
     (function () {
       var root = document.documentElement;
@@ -68,18 +69,13 @@
   <link rel="stylesheet" href="style/ttobot.css">
 </head>
 <body>
-  <div class="most-home">
-    <h1>MOST</h1>
-    <div class="most-home-links">
-      <a class="most-home-card" href="reader.html">
-        <b>대화 보기</b>
-        <span>노모스 · 고스트의 대화를 리더 화면에서 봅니다.</span>
-      </a>
-      <a class="most-home-card" href="logs.html">
-        <b>로그 보기</b>
-        <span>logs/ 폴더에 있는 원본 로그 목록을 봅니다.</span>
-      </a>
-    </div>
+  <div class="most-logs">
+    <a class="most-logs-back" href="index.html">← MOST</a>
+    <h1>로그</h1>
+    <ul class="most-logs-list">
+      <li><a href="logs/%EB%B0%94%EB%8B%A4%EC%9D%98%ED%98%80.html">바다의혀</a></li>
+      <li><a href="logs/psGoodLuck.html">psGoodLuck</a></li>
+    </ul>
   </div>
 </body>
 </html>
