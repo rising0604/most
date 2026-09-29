@@ -121,6 +121,10 @@ window.MOST_MANIFEST = {
     "0921.html": {
       "ghost": "07",
       "nomos": "08"
+    },
+    "0926.html": {
+      "ghost": "07",
+      "nomos": "08"
     }
   },
   "logs": [
@@ -497,6 +501,24 @@ window.MOST_MANIFEST = {
       "avatar": "images/nomos_08.png",
       "text": "(언제나 그랬듯, 눈을 뜨는 건 본인이다. 네가 곤히 잠든 것을 가만히 바라본다. 네 머리를 쓸어주기도 하고, 뺨을 손으로 쓸어보기도 하고.)",
       "count": 578,
+      "gens": {
+        "ghost": "07",
+        "nomos": "08"
+      }
+    },
+    {
+      "file": "toots/0926.html",
+      "month": 9,
+      "day": 26,
+      "part": null,
+      "label": "9월 26일",
+      "stamp": "2026년 9월 26일 오후 08:40",
+      "account": "@NOMOS_ATA",
+      "character": "nomos",
+      "speaker": "노모스",
+      "avatar": "images/nomos_08.png",
+      "text": "(식은땀을 흘리며 일어난다. 자고 있을 네 얼굴을 덥석 잡고는, 가쁜 숨을 내쉰다.) 시현, 시현….",
+      "count": 630,
       "gens": {
         "ghost": "07",
         "nomos": "08"
