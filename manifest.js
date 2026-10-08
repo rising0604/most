@@ -125,6 +125,10 @@ window.MOST_MANIFEST = {
     "0926.html": {
       "ghost": "07",
       "nomos": "08"
+    },
+    "0930.html": {
+      "ghost": "07",
+      "nomos": "08"
     }
   },
   "logs": [
@@ -519,6 +523,24 @@ window.MOST_MANIFEST = {
       "avatar": "images/nomos_08.png",
       "text": "(식은땀을 흘리며 일어난다. 자고 있을 네 얼굴을 덥석 잡고는, 가쁜 숨을 내쉰다.) 시현, 시현….",
       "count": 630,
+      "gens": {
+        "ghost": "07",
+        "nomos": "08"
+      }
+    },
+    {
+      "file": "toots/0930.html",
+      "month": 9,
+      "day": 30,
+      "part": null,
+      "label": "9월 30일",
+      "stamp": "2026년 9월 30일 오전 01:30",
+      "account": "@NOMOS_ATA",
+      "character": "nomos",
+      "speaker": "노모스",
+      "avatar": "images/nomos_08.png",
+      "text": "(모든 일정을 마친다. 머릿 속 칩에 대한 데이터 수집, 제공한 자료로 시뮬레이션을 돌리기도 하고. 향후 어떻게 진행할지 이야기를 나누면, 벌써 밤이다. 내일 마저 진행하자는 이야기로 마무리가 되면, 연락 한 통 없는 네게 조금의 서운함이 밀려온다. 그래도, 어쩌겠나. 전화하기 전 문자를 한다. [시현, 바빠요?] 라고.)",
+      "count": 562,
       "gens": {
         "ghost": "07",
         "nomos": "08"
