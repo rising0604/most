@@ -129,6 +129,10 @@ window.MOST_MANIFEST = {
     "0930.html": {
       "ghost": "07",
       "nomos": "08"
+    },
+    "1007.html": {
+      "ghost": "07",
+      "nomos": "08"
     }
   },
   "logs": [
@@ -541,6 +545,24 @@ window.MOST_MANIFEST = {
       "avatar": "images/nomos_08.png",
       "text": "(모든 일정을 마친다. 머릿 속 칩에 대한 데이터 수집, 제공한 자료로 시뮬레이션을 돌리기도 하고. 향후 어떻게 진행할지 이야기를 나누면, 벌써 밤이다. 내일 마저 진행하자는 이야기로 마무리가 되면, 연락 한 통 없는 네게 조금의 서운함이 밀려온다. 그래도, 어쩌겠나. 전화하기 전 문자를 한다. [시현, 바빠요?] 라고.)",
       "count": 562,
+      "gens": {
+        "ghost": "07",
+        "nomos": "08"
+      }
+    },
+    {
+      "file": "toots/1007.html",
+      "month": 10,
+      "day": 7,
+      "part": null,
+      "label": "10월 7일",
+      "stamp": "2026년 10월 07일 오후 06:35",
+      "account": "@Ghost_ATA",
+      "character": "ghost",
+      "speaker": "윤시현",
+      "avatar": "images/ghost_07.png",
+      "text": "(화면을 켜둔 채 충전기에 꽂아두고 밤새 게임을 했다. 어차피 늦게 일어나기도 했고. 지금부턴 잠을 조절할 때가 되기도 했고.)",
+      "count": 480,
       "gens": {
         "ghost": "07",
         "nomos": "08"
