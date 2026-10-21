@@ -133,6 +133,10 @@ window.MOST_MANIFEST = {
     "1007.html": {
       "ghost": "07",
       "nomos": "08"
+    },
+    "1012.html": {
+      "ghost": "07",
+      "nomos": "08"
     }
   },
   "logs": [
@@ -563,6 +567,24 @@ window.MOST_MANIFEST = {
       "avatar": "images/ghost_07.png",
       "text": "(화면을 켜둔 채 충전기에 꽂아두고 밤새 게임을 했다. 어차피 늦게 일어나기도 했고. 지금부턴 잠을 조절할 때가 되기도 했고.)",
       "count": 480,
+      "gens": {
+        "ghost": "07",
+        "nomos": "08"
+      }
+    },
+    {
+      "file": "toots/1012.html",
+      "month": 10,
+      "day": 12,
+      "part": null,
+      "label": "10월 12일",
+      "stamp": "2026년 10월 12일 오전 12:14",
+      "account": "@Ghost_ATA",
+      "character": "ghost",
+      "speaker": "윤시현",
+      "avatar": "images/ghost_07.png",
+      "text": "(밤새 게임을 하다 의자에 기대 잠깐 졸았다. 여전히 켜둔 화면은 책상에 올려둔 채로.)",
+      "count": 485,
       "gens": {
         "ghost": "07",
         "nomos": "08"
