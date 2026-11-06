@@ -15,7 +15,8 @@ window.MOST_MANIFEST = {
         "04",
         "05",
         "06",
-        "07"
+        "07",
+        "08"
       ]
     },
     "nomos": {
@@ -33,7 +34,8 @@ window.MOST_MANIFEST = {
         "05",
         "06",
         "07",
-        "08"
+        "08",
+        "09"
       ]
     }
   },
@@ -137,6 +139,10 @@ window.MOST_MANIFEST = {
     "1012.html": {
       "ghost": "07",
       "nomos": "08"
+    },
+    "1020.html": {
+      "ghost": "08",
+      "nomos": "09"
     }
   },
   "logs": [
@@ -588,6 +594,24 @@ window.MOST_MANIFEST = {
       "gens": {
         "ghost": "07",
         "nomos": "08"
+      }
+    },
+    {
+      "file": "toots/1020.html",
+      "month": 10,
+      "day": 20,
+      "part": null,
+      "label": "10월 20일",
+      "stamp": "2026년 10월 20일 오전 12:19",
+      "account": "@NOMOS_ATA",
+      "character": "nomos",
+      "speaker": "노모스",
+      "avatar": "images/nomos_09.png",
+      "text": "(네가 말한 시각에 다시 전화를 건다. 오늘로, 이곳에 마지막으로 머무는 날이 될 테지. 그 사이 검진을 받고, 이상이 없는지 모두 체크했다. 이상은 없었다)",
+      "count": 1065,
+      "gens": {
+        "ghost": "08",
+        "nomos": "09"
       }
     }
   ]
